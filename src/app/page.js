@@ -1,4 +1,8 @@
 "use client";
+// _app.js
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import './globals.css'; // Adjust the path to your global styles file
+
 import React, { useRef } from "react";
 import About from "@/components/About";
 import Navbar from "@/components/Navbar";
@@ -11,6 +15,7 @@ import VideosSection from "@/components/VideosSection";
 import FlashbackFridayVideos from "@/components/FlashbackFridayVideos";
 import SponsorsSection from "@/components/SponsorsSection";
 import Footer from "@/components/Footer";
+
 
 export default function Home() {
   // Create refs for each section
@@ -45,6 +50,7 @@ export default function Home() {
       <FlashbackFridayVideos />
       <section ref={sponsorsRef}><SponsorsSection /></section>
       <Footer ref={footerRef} />
+     
     </div>
   );
 }
