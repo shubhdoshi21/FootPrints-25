@@ -2,14 +2,15 @@
 "use client";
 
 import React from "react";
+import Link from "next/link"; // Assuming you're using Next.js for navigation
 
 const Footer = () => {
   return (
     <div className="footer bg-gradient-to-b from-gray-800 to-gray-900 py-12 text-white">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-8">
+      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-8 space-y-8 md:space-y-0">
         
         {/* Newsletter Signup */}
-        <div className="newsletter text-center md:text-left mb-8 md:mb-0">
+        <div className="newsletter text-center md:text-left flex-1">
           <h2 className="text-2xl font-bold mb-2">NEWSLETTER SIGN-UP</h2>
           <p className="mb-4">By subscribing to our mailing list you will always be updated with the latest news from us.</p>
           <form className="flex flex-col md:flex-row items-center">
@@ -23,7 +24,7 @@ const Footer = () => {
         </div>
 
         {/* University Logo */}
-        <div className="logo mb-8 md:mb-0">
+        <div className="logo flex-1 flex justify-center md:justify-center">
           <img
             src="images/MSUlogo.png" // Placeholder for university logo
             alt="University Logo"
@@ -32,7 +33,7 @@ const Footer = () => {
         </div>
 
         {/* Contact Info */}
-        <div className="contact-info text-center md:text-left">
+        <div className="contact-info text-center md:text-left flex-1">
           <h2 className="text-2xl font-bold mb-2">CONTACT INFO</h2>
           <p>Faculty of Technology & Engineering<br />
             The Maharaja Sayajirao University of Baroda,<br />
@@ -42,6 +43,10 @@ const Footer = () => {
             <strong>Email:</strong> info@msufp.in | contact@msufp.in<br />
             <strong>Phone:</strong> +91-9265574891 | +91-7874287905
           </p>
+          {/* Web Team Button */}
+          <Link href="/webteam">
+            <button className="bg-blue-500 text-white mt-4 p-2 rounded-md">Web Team</button>
+          </Link>
         </div>
       </div>
 
