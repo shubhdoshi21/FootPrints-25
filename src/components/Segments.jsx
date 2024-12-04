@@ -28,10 +28,13 @@ const Segments = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {segmentsData.map((segment, index) => (
           <div
-            key={index}
-            onClick={() => handleCardClick(index)}
-            className="p-6 rounded-lg bg-gray-800 hover:bg-gray-700 cursor-pointer transition-all duration-300 relative"
-          >
+          key={index}
+          onClick={() => handleCardClick(index)}
+          className="p-6 rounded-lg bg-opacity-85 border cursor-pointer transition-all duration-300 relative"
+          style={{ borderColor: '#a84343', borderWidth: '1.5px' }} 
+        >
+        
+        
             <div className="flex justify-center mb-4">
               <img src={segment.logo} alt={`${segment.title} logo`} className="w-12 h-12" /> {/* Adjust size as needed */}
             </div>
