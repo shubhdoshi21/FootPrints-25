@@ -38,9 +38,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-700 text-white">
+    <div className="min-h-screen bg-gradient-to-t from-black via-red-990 to-red-900  text-white">
       <Navbar refs={sectionRefs} />
-      <SpinningWheel />
+      <SpinningWheel / >
       <section ref={aboutRef}><About /></section>
       <section ref={segmentsRef}><Segments /></section>
       <section ref={achievementsRef}><Achievements /></section>

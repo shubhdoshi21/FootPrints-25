@@ -39,7 +39,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery-section bg-gradient-to-b from-gray-900 to-gray-700 py-16 px-8 text-white">
+    <div className="gallery-section  py-16 px-8 text-white">
       <h2 className="text-4xl font-bold mb-8 text-center">GALLERY</h2>
       <Slider {...settings} className="max-w-5xl mx-auto">
         {galleryImages.map((image, index) => (

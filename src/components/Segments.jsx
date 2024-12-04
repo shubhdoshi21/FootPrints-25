@@ -23,7 +23,7 @@ const Segments = () => {
   };
 
   return (
-    <div className="segments-section bg-gradient-to-b from-gray-900 to-gray-700 py-16 px-8 text-white">
+    <div className="segments-section  py-16 px-8 text-white">
       <h2 className="text-4xl font-bold mb-8 text-center">SEGMENTS</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {segmentsData.map((segment, index) => (

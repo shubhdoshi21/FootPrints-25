@@ -12,7 +12,7 @@ const videoLinks = [
 
 const VideosSection = () => {
   return (
-    <div className="videos-section bg-gradient-to-b from-gray-900 to-gray-700 py-16 px-8 text-white">
+    <div className="videos-section  py-16 px-8 text-white">
       <h2 className="text-4xl font-bold mb-8 text-center">VIDEOS</h2>
       <div className="video-grid grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {videoLinks.map((video, index) => (
