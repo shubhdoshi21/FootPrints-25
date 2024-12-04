@@ -10,7 +10,7 @@ const About = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="about-section bg-gradient-to-b from-gray-900 to-gray-700 text-white py-16 px-8"
+      className="about-section  text-white py-16 px-8"
     >
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-6">ABOUT</h2>
