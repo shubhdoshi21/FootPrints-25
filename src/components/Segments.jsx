@@ -4,15 +4,16 @@
 import React, { useState } from "react";
 
 const segmentsData = [
-  { title: "TECHNOTRON", description: "A hub of technical competitions and challenges.", logo: "images/Technotron.png" },
-  { title: "KALEIDOSCOPE", description: "A blend of creativity and analytical thinking.", logo: "images/Kaleidoscope.png" },
-  { title: "QUEST", description: "A thrilling treasure hunt through tech and knowledge.", logo: "images/Quest.png" },
-  { title: "ROLLING SQUARES", description: "Unleash your musical and artistic talents.", logo: "images/RS.png" },
-  { title: "FOOTPRINTS STOCK EXCHANGE", description: "Simulate stock trading and investments.", logo: "images/FSE.png" },
-  { title: "VIRTUOSITY", description: "Engage in a world of virtual gaming and fun.", logo: "images/Virtuosity.png" },
-  { title: "FOOTPRINTS SOCIAL RESPONSIBILITY", description: "Promote social responsibility initiatives and projects.", logo: "images/FSR.png" },
-  { title: "SCHITRON", description: "Technical events and knowledge-based activities.", logo: "images/Scitron.png" },
-  { title: "MASCOT", description: "Robotics and automation challenges.", logo: "images/Mascot.png" },
+  { title: "TECHNOTRON", description: "A hub of technical competitions and challenges.", logo: "images/TT.png" },
+  { title: "KALEIDOSCOPE", description: "A blend of creativity and analytical thinking.", logo: "images/KALEIDO.png"
+   },
+  { title: "QUEST", description: "A thrilling treasure hunt through tech and knowledge.", logo: "images/QUEST1.png" },
+  { title: "ROLLING SQUARES", description: "Unleash your musical and artistic talents.", logo: "images/RS1.png" },
+  { title: "FOOTPRINTS STOCK EXCHANGE", description: "Simulate stock trading and investments.", logo: "images/FSE1.png" },
+  { title: "VIRTUOSITY", description: "Engage in a world of virtual gaming and fun.", logo: "images/VIRTUO1.png" },
+  { title: "FOOTPRINTS SOCIAL RESPONSIBILITY", description: "Promote social responsibility initiatives and projects.", logo: "images/FSR1.png" },
+  { title: "SCHITRON", description: "Technical events and knowledge-based activities.", logo: "images/Schitron1.png" },
+  { title: "MASCOT", description: "Robotics and automation challenges.", logo: "images/mascott.png" },
 ];
 
 const Segments = () => {
@@ -33,7 +34,7 @@ const Segments = () => {
             className="p-6 rounded-lg bg-gray-800 hover:bg-gray-700 cursor-pointer transition-all duration-300 relative"
           >
             <div className="flex justify-center mb-4">
-              <img src={segment.logo} alt={`${segment.title} logo`} className="w-12 h-12" /> {/* Adjust size as needed */}
+              <img src={segment.logo} alt={`${segment.title} logo`} className="w-15 h-14" /> {/* Adjust size as needed */}
             </div>
             <h3 className="text-2xl font-semibold mb-4 text-center">{segment.title}</h3>
             {activeSegment === index && (
