@@ -33,7 +33,7 @@ const SponsorsSection = () => {
   }, []);
 
   return (
-    <div className="sponsors-section bg-gradient-to-b from-gray-900 to-gray-700 py-8 text-white text-center">
+    <div className="sponsors-section  py-8 text-white text-center">
       <h2 className="text-3xl font-bold mb-4">SPONSORS</h2>
       <div
         className="sponsor-marquee overflow-hidden whitespace-nowrap max-w-5xl mx-auto"

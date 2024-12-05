@@ -6,7 +6,7 @@ import Link from "next/link"; // Assuming you're using Next.js for navigation
 
 const Footer = () => {
   return (
-    <div className="footer bg-gradient-to-b from-gray-800 to-gray-900 py-12 text-white">
+    <div className="footer  py-12 text-white">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-8 space-y-8 md:space-y-0">
         
         {/* Newsletter Signup */}

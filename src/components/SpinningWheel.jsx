@@ -47,7 +47,8 @@ const SpinningWheel = () => {
   };
 
   return (
-    <div className="wheel-container">
+    <div style={{ paddingTop: '70px' }} >
+    <div className="wheel-container" >
       <div className={`wheel ${spinning}`} style={wheelVars}>
         {items.map((item, index) => (
           <div
@@ -83,6 +84,7 @@ const SpinningWheel = () => {
           </motion.div>
         )}
       </AnimatePresence>
+    </div>
     </div>
   );
 };

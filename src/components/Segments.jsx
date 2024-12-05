@@ -24,15 +24,18 @@ const Segments = () => {
   };
 
   return (
-    <div className="segments-section bg-gradient-to-b from-gray-900 to-gray-700 py-16 px-8 text-white">
+    <div className="segments-section  py-16 px-8 text-white">
       <h2 className="text-4xl font-bold mb-8 text-center">SEGMENTS</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {segmentsData.map((segment, index) => (
           <div
-            key={index}
-            onClick={() => handleCardClick(index)}
-            className="p-6 rounded-lg bg-gray-800 hover:bg-gray-700 cursor-pointer transition-all duration-300 relative"
-          >
+          key={index}
+          onClick={() => handleCardClick(index)}
+          className="p-6 rounded-lg bg-opacity-85 border cursor-pointer transition-all duration-300 relative"
+          style={{ borderColor: '#a84343', borderWidth: '1.5px' }} 
+        >
+        
+        
             <div className="flex justify-center mb-4">
               <img src={segment.logo} alt={`${segment.title} logo`} className="w-15 h-14" /> {/* Adjust size as needed */}
             </div>

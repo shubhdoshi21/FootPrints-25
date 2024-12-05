@@ -1,42 +1,48 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const achievementsData = [
-  { title: "Patronage From UNESCO", logo: "/images/Unesco.jpg" },
-  { title: "Make In India & Skill India", logo:"/images/makeinIndia.jpg" },
-  { title: "SAYEN & CEE", logo: "/images/Sayeen.jpg" },
-  { title: "Appreciation From Former Chief Minister", logo: "/images/VijayRupani.jpg" },
-  { title: "Accreditation of G20", logo: "/images/G20.jpg"},
-  { title: "Appreciation From Home Minister", logo:"/images/HomeMinister.jpg" },
-  { title: "Limca Book Of Record", logo: "/images/Limca.jpg"},
-  { title: "Guinness Book of World Record", logo: "/images/GBW.jpg"},
-  { title: "Young Contributors", logo: "/images/Young.jpg"},
+  { title: "Patronage From UNESCO", logo: "/images/Unesco.jpg", animation: "fade-left" },
+  { title: "Make In India & Skill India", logo: "/images/makeinIndia.jpg", animation: "fade-down" },
+  { title: "SAYEN & CEE", logo: "/images/Sayeen.jpg", animation: "fade-right" },
+  { title: "Appreciation From Former Chief Minister", logo: "/images/VijayRupani.jpg", animation: "fade-left" },
+  { title: "Accreditation of G20", logo: "/images/G20.jpg", animation: "fade-down" },
+  { title: "Appreciation From Home Minister", logo: "/images/HomeMinister.jpg", animation: "fade-right" },
+  { title: "Limca Book Of Record", logo: "/images/Limca.jpg", animation: "fade-left" },
+  { title: "Guinness Book of World Record", logo: "/images/GBW.jpg", animation: "fade-down" },
+  { title: "Young Contributors", logo: "/images/Young.jpg", animation: "fade-right" },
 ];
 
 const Achievements = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, delay: 150 });
+  }, []);
+
   return (
-    <div className="achievements-section bg-gradient-to-b from-gray-900 to-gray-700 py-16 px-8 text-white">
+    <div className="achievements-section py-16 px-8 text-white">
       <h2 className="text-4xl font-bold mb-8 text-center">ACHIEVEMENTS</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
         {achievementsData.map((achievement, index) => (
           <div
             key={index}
-            className="p-6 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-300 text-center"
+            className="p-6 rounded-lg bg-opacity-85 border cursor-pointer transition-all duration-300 relative transform hover:scale-105 hover:border-glow"
+            style={{ borderColor: "#a84343", borderWidth: "1.5px" }}
+            data-aos={achievement.animation}
           >
-            <div className="flex justify-center mb-4">
-            <Image
-  src={achievement.logo}
-  alt={`${achievement.title} logo`}
-  width={80}
-  height={80}
-  className="w-20 h-20"
-/>
-
+            <div className="relative w-full h-40 mb-4">
+              <Image
+                src={achievement.logo}
+                alt={`${achievement.title} logo`}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
             </div>
-            <h3 className="text-xl font-semibold">{achievement.title}</h3>
+            <h3 className="text-xl font-semibold text-center">{achievement.title}</h3>
           </div>
         ))}
       </div>
