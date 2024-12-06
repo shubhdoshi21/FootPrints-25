@@ -5,6 +5,11 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Ranchers } from "@next/font/google";
+
+// Load Ranchers font
+const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
+
 
 const galleryImages = [
   { src: "/path/to/image1.png", alt: "Image 1" },
@@ -40,7 +45,7 @@ const Gallery = () => {
 
   return (
     <div className="gallery-section  py-16 px-8 text-white">
-      <h2 className="text-4xl font-bold mb-8 text-center">GALLERY</h2>
+      <h2 className="text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide">GALLERY</h2>
       <Slider {...settings} className="max-w-5xl mx-auto">
         {galleryImages.map((image, index) => (
           <div key={index} className="px-4">
