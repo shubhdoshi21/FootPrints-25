@@ -26,14 +26,88 @@ const SpinningWheel = () => {
   };
   
   const getCarouselDataForItem = (item) => {
-    // Return different carousel data based on the selected item
-    // This is just an example, you can customize this function as needed
-    return [
-      { title: `Item ${item} - Slide 1`, description: `Description for item ${item}, slide 1` },
-      { title: `Item ${item} - Slide 2`, description: `Description for item ${item}, slide 2` },
-      { title: `Item ${item} - Slide 3`, description: `Description for item ${item}, slide 3` },
-    ];
+    // Map of items to their respective sets of images
+    const imageSets = {
+      1: [
+        "/images/1/image1.jpg",
+        "/images/1/image2.jpg",
+        "/images/1/image3.jpg",
+        "/images/1/image4.jpg",
+        "/images/1/image5.jpg",
+        "/images/1/image6.jpg",
+        "/images/1/image7.jpg",
+      ],
+      2: [
+        "/images/2/image1.jpg",
+        "/images/2/image2.jpg",
+        "/images/2/image3.jpg",
+        "/images/2/image4.jpg",
+        "/images/2/image5.jpg",
+        "/images/2/image6.jpg",
+        "/images/2/image7.jpg",
+      ],
+      24: [
+        "/images/24/image1.jpg",
+        "/images/24/image2.jpg",
+        "/images/24/image3.jpg",
+        "/images/24/image4.jpg",
+        "/images/24/image5.jpg",
+        "/images/24/image6.jpg",
+        "/images/24/image7.jpg",
+      ],
+      3: [
+        "/images/3/image1.jpg",
+        "/images/3/image2.jpg",
+        "/images/3/image3.jpg",
+        "/images/3/image4.jpg",
+        "/images/3/image5.jpg",
+        "/images/3/image6.jpg",
+        "/images/3/image7.jpg",
+      ],
+      4: [
+        "/images/4/image1.jpg",
+        "/images/4/image2.jpg",
+        "/images/4/image3.jpg",
+        "/images/4/image4.jpg",
+        "/images/4/image5.jpg",
+        "/images/24/image6.jpg",
+        "/images/24/image7.jpg",
+      ],
+      24: [
+        "/images/24/image1.jpg",
+        "/images/24/image2.jpg",
+        "/images/24/image3.jpg",
+        "/images/24/image4.jpg",
+        "/images/24/image5.jpg",
+        "/images/24/image6.jpg",
+        "/images/24/image7.jpg",
+      ],
+      24: [
+        "/images/24/image1.jpg",
+        "/images/24/image2.jpg",
+        "/images/24/image3.jpg",
+        "/images/24/image4.jpg",
+        "/images/24/image5.jpg",
+        "/images/24/image6.jpg",
+        "/images/24/image7.jpg",
+      ],
+
+      24: [
+        "/images/24/image1.jpg",
+        "/images/24/image2.jpg",
+        "/images/24/image3.jpg",
+        "/images/24/image4.jpg",
+        "/images/24/image5.jpg",
+        "/images/24/image6.jpg",
+        "/images/24/image7.jpg",
+      ],
+      // Add mappings for other numbers up to 25...
+    };
+  
+    // Return images for the selected item or fallback to an empty array
+    return imageSets[item] || [];
   };
+  
 
   const wheelVars = {
     "--nb-item": items.length,
@@ -78,14 +152,14 @@ const SpinningWheel = () => {
             transition={{ duration: 0.5 }}
             className="carousel-container"
           >
-            <Slider {...settings}>
-              {carouselData.map((item, index) => (
-                <div key={index} className="carousel-item">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              ))}
-            </Slider>
+       <Slider {...settings}>
+  {carouselData.map((imagePath, index) => (
+    <div key={index} className="carousel-item">
+      <img src={imagePath} alt={`Image ${index + 1}`} style={{ width: '100%', height: 'auto' }} />
+    </div>
+  ))}
+</Slider>
+
           </motion.div>
         )}
       </AnimatePresence>

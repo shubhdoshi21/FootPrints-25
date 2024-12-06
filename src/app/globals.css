@@ -20,14 +20,19 @@
   --reset-duration: 1s;
 }
 
+
+
+
 html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden;
 }
+
+
 
 
 
@@ -225,7 +230,6 @@ html, body {
     border-color: rgba(255, 99, 71, 0.9);
   }
 }
-
 
 
 

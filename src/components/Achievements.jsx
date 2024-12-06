@@ -30,7 +30,9 @@ const Achievements = () => {
 
   return (
     <div className="achievements-section py-16 px-8 text-white">
-      <h2 className={`text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}>
+      <h2
+        className={`text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}
+      >
         ACHIEVEMENTS
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -44,7 +46,7 @@ const Achievements = () => {
             <div className="relative w-full h-40 mb-4">
               <Image
                 src={achievement.logo}
-                alt={`${achievement.title} logo`}
+                alt={`${achievement.title} logo`} // Corrected alt attribute
                 fill
                 className="rounded-lg object-cover"
               />
