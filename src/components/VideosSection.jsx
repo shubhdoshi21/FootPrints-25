@@ -3,6 +3,10 @@
 
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import { Ranchers } from "@next/font/google";
+
+// Load Ranchers font
+const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
 const videoLinks = [
   { id: "your_video_id_1", title: "Footprints'24 Official Teaser" },
@@ -12,8 +16,12 @@ const videoLinks = [
 
 const VideosSection = () => {
   return (
-    <div className="videos-section  py-16 px-8 text-white">
-      <h2 className="text-4xl font-bold mb-8 text-center">VIDEOS</h2>
+    <div className="videos-section  py-16 px-8 text-white text-center">
+      <h2
+          className={`text-4xl font-bold mb-6 ${ranchers.className} tracking-wide`}
+        >
+          VIDEOS
+        </h2>
       <div className="video-grid grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {videoLinks.map((video, index) => (
           <VideoCard key={index} video={video} />

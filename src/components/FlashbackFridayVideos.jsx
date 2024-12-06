@@ -3,6 +3,10 @@
 
 import React from "react";
 import { useInView } from "react-intersection-observer";
+import { Ranchers } from "@next/font/google";
+
+// Load Ranchers font
+const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
 const flashbackVideos = [
   {
@@ -26,7 +30,11 @@ const flashbackVideos = [
 const FlashbackFridayVideos = () => {
   return (
     <div className="flashback-friday-section bg-gradient-to-b from-gray-900 to-gray-700 py-16 px-8 text-white">
-      <h2 className="text-4xl font-bold mb-8 text-center">FLASHBACK FRIDAY VIDEOS</h2>
+      <h2
+          className={`text-4xl font-bold mb-6 ${ranchers.className} tracking-wide text-center`}
+        >
+          FLASHBACK FRIDAY VIDEOS
+        </h2>
       <div className="video-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {flashbackVideos.map((video, index) => (
           <VideoCard key={index} video={video} />

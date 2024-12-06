@@ -1,15 +1,22 @@
-// components/SponsorsSection.js
 "use client";
 
 import React, { useEffect, useRef } from "react";
 
-// Placeholder sponsor data (you can replace imageSrc with actual image paths later)
+// Update with actual sponsor names and image paths
 const sponsors = [
-  { name: "Media Partner", imageSrc: "/path/to/media-partner.jpg" },
-  { name: "Online Media Partner", imageSrc: "/path/to/online-media-partner.jpg" },
-  { name: "Cab Partner", imageSrc: "/path/to/cab-partner.jpg" },
-  { name: "Virtuosity Sponsor", imageSrc: "/path/to/virtuosity-sponsor.jpg" },
-  { name: "Cake Partner", imageSrc: "/path/to/cake-partner.jpg" },
+  { name: "Title Sponsor", imageSrc: "/images/Images(sponsor)/ACUMEN.jpg" },
+  { name: "Co-Sponsored By", imageSrc: "/images/Images(sponsor)/ACUMEN.jpg" },
+  { name: "Associate Sponsor", imageSrc: "/images/Images(sponsor)/ACUMEN.jpg" },
+  { name: "Macheanema Sponsor", imageSrc: "/images/Images(sponsor)/ACUMEN.jpg" },
+  { name: "Gate Sponsor", imageSrc: "/images/Images(sponsor)/ACUMEN.jpg" },
+  { name: "Media Partner", imageSrc: "/images/Images(sponsor)/YouthBarodian.jpg" },
+  { name: "Media Partner", imageSrc: "/images/Images(sponsor)/Asgard.jpg" },
+  { name: "Media Partner", imageSrc: "/images/Images(sponsor)/Vadodara Mirror.jpg" },
+  { name: "Online Media Partner", imageSrc: "/images/Images(sponsor)/online-media-partner.jpg" },
+  { name: "Cab Partner", imageSrc: "/images/Images(sponsor)/cab-partner.jpg" },
+  { name: "Virtuosity Sponsor", imageSrc: "/images/Images(sponsor)/virtuosity-sponsor.jpg" },
+  { name: "Cake Partner", imageSrc: "/images/Images(sponsor)/Goodies Logo.jpg" },
+  // Add more sponsors as needed
 ];
 
 const SponsorsSection = () => {
@@ -33,7 +40,7 @@ const SponsorsSection = () => {
   }, []);
 
   return (
-    <div className="sponsors-section  py-8 text-white text-center">
+    <div className="sponsors-section py-8 text-white text-center">
       <h2 className="text-3xl font-bold mb-4">SPONSORS</h2>
       <div
         className="sponsor-marquee overflow-hidden whitespace-nowrap max-w-5xl mx-auto"

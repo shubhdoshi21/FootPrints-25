@@ -43,7 +43,7 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery-section  py-16 px-8 text-white">
+    <div className="gallery-section  py-16 px-8 text-white text-center">
      <h2
           className={`text-4xl font-bold mb-6 ${ranchers.className} tracking-wide`}
         >
