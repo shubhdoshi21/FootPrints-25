@@ -44,9 +44,8 @@ const Achievements = () => {
               <Image
                 src={achievement.logo}
                 alt={`${achievement.title} logo`}
-                layout="fill"
-                objectFit="cover"
-                className="rounded-lg"
+                fill
+                className="rounded-lg object-cover"
               />
             </div>
             <h3 className="text-xl font-semibold text-center">{achievement.title}</h3>

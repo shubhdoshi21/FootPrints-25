@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ShaderBackground.css */
+
 
 :root {
   --wheel-font: 'Lato', 'Quicksand', sans-serif;
@@ -17,6 +19,16 @@
   --spinning-duration: 4s;
   --reset-duration: 1s;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 
 
 
@@ -213,7 +225,6 @@
     border-color: rgba(255, 99, 71, 0.9);
   }
 }
-
 
 
 

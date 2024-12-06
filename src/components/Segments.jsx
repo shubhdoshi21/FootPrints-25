@@ -1,8 +1,8 @@
 "use client";
-
+import AOS from "aos";
 import React, { useState } from "react";
 import { Ranchers } from "@next/font/google";
-import AOS from "aos";
+
 import "aos/dist/aos.css";
 
 // Load Ranchers font
