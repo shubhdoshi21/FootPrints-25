@@ -34,6 +34,7 @@
   border: solid var(--wheel-color) 3px;
   border-radius: 50%;
   user-select: none;
+  
 }
 
 .wheel-container::before,

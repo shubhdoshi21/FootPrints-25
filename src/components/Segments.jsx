@@ -2,6 +2,11 @@
 "use client";
 
 import React, { useState } from "react";
+import { Ranchers } from "@next/font/google";
+
+// Load Ranchers font
+const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
+
 
 const segmentsData = [
   { title: "TECHNOTRON", description: "A hub of technical competitions and challenges.", logo: "images/Technotron.png" },
@@ -24,7 +29,7 @@ const Segments = () => {
 
   return (
     <div className="segments-section  py-16 px-8 text-white">
-      <h2 className="text-4xl font-bold mb-8 text-center">SEGMENTS</h2>
+      <h2 className="text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide">SEGMENTS</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {segmentsData.map((segment, index) => (
           <div

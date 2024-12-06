@@ -4,6 +4,11 @@ import Slider from "react-slick";
 import { motion, AnimatePresence } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Ranchers } from "@next/font/google";
+
+// Load Ranchers font
+const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
+
 
 const SpinningWheel = () => {
   const items = Array.from({ length: 25 }, (_, i) => i + 1);

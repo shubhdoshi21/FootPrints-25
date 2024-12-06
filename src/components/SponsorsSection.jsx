@@ -2,6 +2,11 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { Ranchers } from "@next/font/google";
+
+// Load Ranchers font
+const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
+
 
 // Placeholder sponsor data (you can replace imageSrc with actual image paths later)
 const sponsors = [
@@ -34,7 +39,7 @@ const SponsorsSection = () => {
 
   return (
     <div className="sponsors-section  py-8 text-white text-center">
-      <h2 className="text-3xl font-bold mb-4">SPONSORS</h2>
+      <h2 className="text-3xl font-bold mb-4 ${ranchers.className} tracking-wide">SPONSORS</h2>
       <div
         className="sponsor-marquee overflow-hidden whitespace-nowrap max-w-5xl mx-auto"
         ref={scrollRef}
