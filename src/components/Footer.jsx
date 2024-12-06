@@ -1,4 +1,3 @@
-// components/Footer.js
 "use client";
 
 import React from "react";
@@ -6,7 +5,7 @@ import Link from "next/link"; // Assuming you're using Next.js for navigation
 
 const Footer = () => {
   return (
-    <div className="footer  py-12 text-white">
+    <div className="footer py-12 text-white">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-8 space-y-8 md:space-y-0">
         
         {/* Newsletter Signup */}
@@ -19,7 +18,7 @@ const Footer = () => {
               placeholder="Enter Email Address"
               className="bg-gray-700 text-white p-2 rounded-l-md w-full md:w-auto"
             />
-            <button className="bg-blue-500 text-white p-2 rounded-r-md mt-2 md:mt-0 md:ml-2">Subscribe</button>
+            <button className="bg-blue-500 text-white p-2 rounded-r-md mt-2 md:mt-0 md:ml-2 hover:bg-blue-400">Subscribe</button>
           </form>
         </div>
 
@@ -28,7 +27,7 @@ const Footer = () => {
           <img
             src="images/MSUlogo.png" // Placeholder for university logo
             alt="University Logo"
-            className="h-24"
+            className="h-24 transition-transform transform hover:scale-110"
           />
         </div>
 
@@ -45,7 +44,7 @@ const Footer = () => {
           </p>
           {/* Web Team Button */}
           <Link href="/webteam">
-            <button className="bg-blue-500 text-white mt-4 p-2 rounded-md">Web Team</button>
+            <button className="bg-blue-500 text-white mt-4 p-2 rounded-md hover:bg-blue-400">Web Team</button>
           </Link>
         </div>
       </div>
