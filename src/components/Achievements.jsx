@@ -8,8 +8,6 @@ import { Ranchers } from "@next/font/google";
 // Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const achievementsData = [
   { title: "Patronage From UNESCO", logo: "/images/Unesco.jpg", animation: "fade-left" },
@@ -24,9 +22,7 @@ const achievementsData = [
 ];
 
 const Achievements = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000, delay: 150 });
-  }, []);
+
 
   return (
     <div className="achievements-section py-16 px-8 text-white">
@@ -41,7 +37,7 @@ const Achievements = () => {
             key={index}
             className="p-6 rounded-lg bg-opacity-85 border cursor-pointer transition-all duration-300 relative transform hover:scale-105 hover:border-glow"
             style={{ borderColor: "#a84343", borderWidth: "1.5px" }}
-            data-aos={achievement.animation}
+           
           >
             <div className="relative w-full h-40 mb-4">
               <Image
