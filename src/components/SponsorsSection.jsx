@@ -1,6 +1,11 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
+import { Ranchers } from "@next/font/google";
+
+// Load Ranchers font
+const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
+
 
 // Update with actual sponsor names and image paths
 const sponsors = [

@@ -2,6 +2,11 @@
 
 import React from "react";
 import Link from "next/link"; // Assuming you're using Next.js for navigation
+import { Ranchers } from "@next/font/google";
+
+// Load Ranchers font
+const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
+
 
 const Footer = () => {
   return (
@@ -10,7 +15,7 @@ const Footer = () => {
         
         {/* Newsletter Signup */}
         <div className="newsletter text-center md:text-left flex-1">
-          <h2 className="text-2xl font-bold mb-2">NEWSLETTER SIGN-UP</h2>
+          <h2 className="text-2xl font-bold mb-2 ${ranchers.className} tracking-wide">NEWSLETTER SIGN-UP</h2>
           <p className="mb-4">By subscribing to our mailing list you will always be updated with the latest news from us.</p>
           <form className="flex flex-col md:flex-row items-center">
             <input

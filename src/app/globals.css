@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ShaderBackground.css */
+
 
 :root {
   --wheel-font: 'Lato', 'Quicksand', sans-serif;
@@ -20,6 +22,21 @@
 
 
 
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+
+
+
+
 .wheel-container {
 
   display: block;
@@ -34,6 +51,7 @@
   border: solid var(--wheel-color) 3px;
   border-radius: 50%;
   user-select: none;
+  
 }
 
 .wheel-container::before,

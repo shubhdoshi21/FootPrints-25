@@ -30,9 +30,7 @@ const Achievements = () => {
 
   return (
     <div className="achievements-section py-16 px-8 text-white">
-      <h2
-        className={`text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}
-      >
+      <h2 className={`text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}>
         ACHIEVEMENTS
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
