@@ -67,7 +67,8 @@ const Testimonials = () => {
       <Slider {...settings} className="max-w-5xl mx-auto">
         {testimonialsData.map((testimonial, index) => (
           <div key={index} className="px-4">
-            <div className="p-6 bg-gray-800 rounded-lg text-center shadow-lg">
+            <div className="p-6 rounded-lg bg-opacity-85 border cursor-pointer transition-all duration-300 relative transform hover:scale-105 hover:border-glow"
+            style={{ borderColor: "#a84343", borderWidth: "1.5px" }}>
               <p className="italic text-lg mb-4">"{testimonial.quote}"</p>
               <div className="flex items-center justify-center mb-4">
                 <img
