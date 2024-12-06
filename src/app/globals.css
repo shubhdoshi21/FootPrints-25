@@ -3,9 +3,8 @@
 @tailwind utilities;
 /* ShaderBackground.css */
 
-
 :root {
-  --wheel-font: 'Lato', 'Quicksand', sans-serif;
+  --wheel-font: "Lato", "Quicksand", sans-serif;
   --wheel-size: 500px;
   --wheel-slice-spacing: 65px;
   --wheel-border-size: 5px;
@@ -20,25 +19,17 @@
   --reset-duration: 1s;
 }
 
-
-
-
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden;
 }
 
-
-
-
-
-
 .wheel-container {
-
   display: block;
   position: relative;
   box-sizing: content-box;
@@ -46,17 +37,16 @@ html, body {
   height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
   padding: 3px;
   margin: auto;
-  
+
   background-color: var(--neutral-color);
   border: solid var(--wheel-color) 3px;
   border-radius: 50%;
   user-select: none;
-  
 }
 
 .wheel-container::before,
 .wheel-container::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   height: 0;
@@ -96,14 +86,18 @@ html, body {
 
 .wheel.spinning {
   transition: transform var(--spinning-duration);
-  transform: rotate(calc(var(--nb-turn) * 360deg + (-360deg * var(--selected-item) / var(--nb-item, 1))));
+  transform: rotate(
+    calc(
+      var(--nb-turn) * 360deg +
+        (-360deg * var(--selected-item) / var(--nb-item, 1))
+    )
+  );
 }
-
 
 .wheel::after {
   display: block;
   position: absolute;
-  content: '';
+  content: "";
   background-color: var(--neutral-color);
   width: 25px;
   height: 25px;
@@ -122,7 +116,8 @@ html, body {
   left: 50%;
   width: 50%;
   transform-origin: center left;
-  transform: translateY(-50%) rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
+  transform: translateY(-50%)
+    rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
   color: var(--neutral-color);
   text-align: right;
   padding: 0 10px 0 50px;
@@ -130,7 +125,7 @@ html, body {
 }
 
 .wheel-item:before {
-  content: ' ';
+  content: " ";
   display: block;
   position: absolute;
   box-sizing: border-box;
@@ -142,20 +137,22 @@ html, body {
   transform: translate(-50%, -50%);
   padding-left: 0px;
   opacity: 0.25;
-  --slice-max-width: calc(var(--PI) * var(--wheel-size) + var(--wheel-size) / 2);
-  --slice-width: calc((var(--slice-max-width) / var(--nb-item)) - var(--wheel-slice-spacing));
+  --slice-max-width: calc(
+    var(--PI) * var(--wheel-size) + var(--wheel-size) / 2
+  );
+  --slice-width: calc(
+    (var(--slice-max-width) / var(--nb-item)) - var(--wheel-slice-spacing)
+  );
   border: solid transparent calc(var(--slice-width) * 2.5);
   border-left: solid transparent 0;
   border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
 }
 
-
-
-
 .carousel-container {
+  display: block;
+  width: 70%;
+  margin: auto;
   margin-top: 20px;
-  padding: 20px;
-  background-color: #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -163,17 +160,9 @@ html, body {
 .carousel-item {
   text-align: center;
   padding: 20px;
-}
-
-.carousel-item h3 {
-  font-size: 24px;
-  color: var(--wheel-color);
-  margin-bottom: 10px;
-}
-
-.carousel-item p {
-  font-size: 16px;
-  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Custom styles for react-slick */
@@ -197,10 +186,10 @@ html, body {
 
 .slick-prev:before,
 .slick-next:before {
-  font-family: 'slick';
+  font-family: "slick";
   font-size: 20px;
   line-height: 1;
-  opacity: .75;
+  opacity: 0.75;
   color: var(--wheel-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -222,14 +211,9 @@ html, body {
   color: var(--wheel-color);
 }
 
-
-
 @layer utilities {
   .hover\:border-glow:hover {
     box-shadow: 0 0 15px rgba(255, 99, 71, 0.7), 0 0 30px rgba(255, 99, 71, 0.5);
     border-color: rgba(255, 99, 71, 0.9);
   }
 }
-
-
-
