@@ -8,11 +8,8 @@ import { Ranchers } from "@next/font/google";
 // Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
-
-
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 
 const achievementsData = [
   { title: "Patronage From UNESCO", logo: "/images/Unesco.jpg", animation: "fade-left" },
@@ -32,14 +29,9 @@ const Achievements = () => {
   }, []);
 
   return (
-
-    <div className="achievements-section  py-16 px-8 text-white">
-      <h2 className="text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide">ACHIEVEMENTS</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
     <div className="achievements-section py-16 px-8 text-white">
-      <h2 className="text-4xl font-bold mb-8 text-center">ACHIEVEMENTS</h2>
+      <h2 className={`text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}>ACHIEVEMENTS</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-
         {achievementsData.map((achievement, index) => (
           <div
             key={index}
