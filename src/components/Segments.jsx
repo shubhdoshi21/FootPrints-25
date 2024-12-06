@@ -10,13 +10,14 @@ const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
 const segmentsData = [
   { title: "TECHNOTRON", description: "A hub of technical competitions and challenges.", logo: "images/TT.png" },
-  { title: "KALEIDOSCOPE", description: "A blend of creativity and analytical thinking.", logo: "images/KALEIDO.png" },
+  { title: "KALEIDOSCOPE", description: "A blend of creativity and analytical thinking.", logo: "images/KALEIDO.png"
+   },
   { title: "QUEST", description: "A thrilling treasure hunt through tech and knowledge.", logo: "images/QUEST1.png" },
-  { title: "ROLLING SQUARES", description: "Unleash your musical and artistic talents.", logo: "images/RS2.png" },
-  { title: "FOOTPRINTS STOCK EXCHANGE", description: "Simulate stock trading and investments.", logo: "images/fse1.png" },
+  { title: "ROLLING SQUARES", description: "Unleash your musical and artistic talents.", logo: "images/RS1.png" },
+  { title: "FOOTPRINTS STOCK EXCHANGE", description: "Simulate stock trading and investments.", logo: "images/FSE1.png" },
   { title: "VIRTUOSITY", description: "Engage in a world of virtual gaming and fun.", logo: "images/VIRTUO1.png" },
   { title: "FOOTPRINTS SOCIAL RESPONSIBILITY", description: "Promote social responsibility initiatives and projects.", logo: "images/FSR1.png" },
-  { title: "SCHITRON", description: "Technical events and knowledge-based activities.", logo: "images/SCHITRON1.png" },
+  { title: "SCHITRON", description: "Technical events and knowledge-based activities.", logo: "images/Schitron1.png" },
   { title: "MASCOT", description: "Robotics and automation challenges.", logo: "images/mascott.png" },
 ];
 
@@ -41,7 +42,7 @@ const Segments = () => {
         
         
             <div className="flex justify-center mb-4">
-              <img src={segment.logo} alt={`${segment.title} logo`} className="w-12 h-12" /> {/* Adjust size as needed */}
+              <img src={segment.logo} alt={`${segment.title} logo`} className="w-15 h-14" /> {/* Adjust size as needed */}
             </div>
             <h3 className="text-2xl font-semibold mb-4 text-center">{segment.title}</h3>
             {activeSegment === index && (
