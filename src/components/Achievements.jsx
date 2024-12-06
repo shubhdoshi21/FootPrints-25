@@ -38,6 +38,7 @@ const Achievements = () => {
             className="p-6 rounded-lg bg-opacity-85 border cursor-pointer transition-all duration-300 relative transform hover:scale-105 hover:border-glow"
             style={{ borderColor: "#a84343", borderWidth: "1.5px" }}
             data-aos={achievement.animation}
+            data-aos-duration="1000"
           >
             <div className="relative w-full h-40 mb-4">
               <Image
