@@ -8,6 +8,8 @@ import { Ranchers } from "@next/font/google";
 // Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const achievementsData = [
   { title: "Patronage From UNESCO", logo: "/images/Unesco.jpg", animation: "fade-left" },
@@ -22,13 +24,13 @@ const achievementsData = [
 ];
 
 const Achievements = () => {
-
+  useEffect(() => {
+    AOS.init({ duration: 1000, delay: 150 });
+  }, []);
 
   return (
     <div className="achievements-section py-16 px-8 text-white">
-      <h2
-        className={`text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}
-      >
+      <h2 className={`text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}>
         ACHIEVEMENTS
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -37,12 +39,12 @@ const Achievements = () => {
             key={index}
             className="p-6 rounded-lg bg-opacity-85 border cursor-pointer transition-all duration-300 relative transform hover:scale-105 hover:border-glow"
             style={{ borderColor: "#a84343", borderWidth: "1.5px" }}
-           
+            data-aos={achievement.animation}
           >
             <div className="relative w-full h-40 mb-4">
               <Image
                 src={achievement.logo}
-                alt={`${achievement.title} logo`} // Corrected alt attribute
+                alt={`${achievement.title} logo`}
                 fill
                 className="rounded-lg object-cover"
               />

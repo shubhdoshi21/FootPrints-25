@@ -217,3 +217,83 @@ body {
     border-color: rgba(255, 99, 71, 0.9);
   }
 }
+
+/* Footer Background */
+.footer {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 50px 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Newsletter Signup Styling */
+.newsletter input,
+.newsletter button {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* Button Hover Effects */
+.newsletter button:hover,
+.footer button:hover {
+  background-color: #1e90ff; /* Blue shade on hover */
+  transform: translateY(-5px);
+}
+
+/* Social Media Links */
+.social-media a {
+  color: #fff;
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #1e90ff; /* Blue color on hover */
+  transform: translateY(-5px);
+}
+
+/* Footer Logo */
+.logo img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Contact Info Hover */
+.contact-info button:hover {
+  background-color: #1e90ff;
+  transform: translateY(-5px);
+}
+
+/* Smooth Scroll for Footer Links */
+a {
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #1e90ff; /* Blue on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+  }
+
+  .newsletter,
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-media {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+

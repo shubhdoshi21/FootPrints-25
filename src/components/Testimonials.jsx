@@ -10,7 +10,6 @@ import { Ranchers } from "@next/font/google";
 // Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
-
 const testimonialsData = [
   {
     name: "Peter C. Schultz",
@@ -62,8 +61,12 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="testimonials-section  py-16 px-8 text-white">
-      <h2 className="text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide">TESTIMONIALS</h2>
+    <div className="testimonials-section  py-16 px-8 text-white text-center">
+      <h2
+          className={`text-4xl font-bold mb-6 ${ranchers.className} tracking-wide`}
+        >
+          TESTIMONIALS
+        </h2>
       <Slider {...settings} className="max-w-5xl mx-auto">
         {testimonialsData.map((testimonial, index) => (
           <div key={index} className="px-4">

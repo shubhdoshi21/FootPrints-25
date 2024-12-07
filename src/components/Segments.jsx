@@ -1,6 +1,7 @@
 "use client";
 // import AOS from "aos";
 import React, { useState } from "react";
+
 import { Ranchers } from "@next/font/google";
 
 // import "aos/dist/aos.css";
@@ -28,14 +29,13 @@ const Segments = () => {
   };
 
   return (
-    <div className="segments-section py-16 px-8 text-white">
+
+    <div className="segments-section  py-16 px-8 text-white text-center">
       <h2
-        data-aos="fade-up"
-        data-aos-duration="1000"
-        className={`aos-init aos-animate text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}
-      >
-        SEGMENTS
-      </h2>
+          className={`text-4xl font-bold mb-6 ${ranchers.className} tracking-wide`}
+        >
+          SEGMENTS
+        </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {segmentsData.map((segment, index) => (
           <div
