@@ -73,7 +73,7 @@ const SponsorsSection = () => {
 
   return (
     <div className="sponsors-section py-8 text-center">
-      <h2 className="text-3xl font-bold mb-4" style={{ color: "black" }}>SPONSORS</h2>
+      <h2 className="text-3xl font-bold mb-4" style={{ color: "white" }}>SPONSORS</h2>
       <div
         className="sponsor-marquee overflow-hidden whitespace-nowrap max-w-5xl mx-auto"
         ref={scrollRef}
