@@ -217,3 +217,21 @@ body {
     border-color: rgba(255, 99, 71, 0.9);
   }
 }
+
+
+/* Apply styles to all scrollbars */
+::-webkit-scrollbar {
+  width: 12px; /* Set scrollbar width */
+  height: 12px; /* Set scrollbar height for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #a72a2a, #330000); /* Gradient color */
+  border-radius: 20px; /* Makes the scrollbar rounded */
+  border: 3px solid #fff; /* Adds space and contrast */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track background color */
+  border-radius: 20px;
+}

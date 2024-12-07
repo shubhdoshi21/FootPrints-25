@@ -93,7 +93,7 @@ const SpinningWheel = () => {
       ],
       24: [
         "/images/24/image1.jpg",
-        "/images/24/image2.jpg",
+        "/images/24/image5.jpg",
         "/images/24/image3.jpg",
         "/images/24/image4.jpg",
         "/images/24/image5.jpg",
@@ -112,7 +112,7 @@ const SpinningWheel = () => {
 
       24: [
         "/images/24/image1.jpg",
-        "/images/24/image2.jpg",
+        "/images/24/image5.jpg",
         "/images/24/image3.jpg",
         "/images/24/image4.jpg",
         "/images/24/image5.jpg",
@@ -140,7 +140,7 @@ const SpinningWheel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: false,
+    arrows: true,
     beforeChange: (current, next) => setCurrentSlide(next),
     responsive: [
       {
