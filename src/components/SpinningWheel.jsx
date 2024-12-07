@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { motion, AnimatePresence } from "framer-motion";
 import "slick-carousel/slick/slick.css";
@@ -9,22 +9,40 @@ import { Ranchers } from "@next/font/google";
 // Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
-
 const SpinningWheel = () => {
   const items = Array.from({ length: 25 }, (_, i) => i + 1);
   const [selectedItem, setSelectedItem] = useState(null);
   const [showCarousel, setShowCarousel] = useState(false);
   const [carouselData, setCarouselData] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [showGif, setShowGif] = useState(false); // State to manage GIF visibility
+  const [wheelVisible, setWheelVisible] = useState(true);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const selectItem = (index) => {
     setSelectedItem(index);
     // Set carousel data based on the selected item
     setCarouselData(getCarouselDataForItem(items[index]));
-    setTimeout(() => {
-      setShowCarousel(true);
-    }, 4000);
+    if (items[index] === 25) {
+      // If 25 is selected, hide the wheel and show the GIF
+      setWheelVisible(false);
+      setShowGif(true);
+    } else {
+      setTimeout(() => {
+        setShowCarousel(true);
+      }, 4000);
+    }
   };
-  
+
   const getCarouselDataForItem = (item) => {
     // Map of items to their respective sets of images
     const imageSets = {
@@ -103,11 +121,10 @@ const SpinningWheel = () => {
       ],
       // Add mappings for other numbers up to 25...
     };
-  
+
     // Return images for the selected item or fallback to an empty array
     return imageSets[item] || [];
   };
-  
 
   const wheelVars = {
     "--nb-item": items.length,
@@ -119,51 +136,111 @@ const SpinningWheel = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    arrows: false,
+    beforeChange: (current, next) => setCurrentSlide(next),
+    responsive: [
+      {
+        breakpoint: 768, // For screens less than 768px
+        settings: {
+          slidesToShow: 1, // Show only one slide
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <div style={{ paddingTop: '70px' }} >
-    <div className="wheel-container" >
-      <div className={`wheel ${spinning}`} style={wheelVars}>
-        {items.map((item, index) => (
-          <div
-            className="wheel-item"
-            key={index}
-            style={{ "--item-nb": index }}
-            onClick={() => selectItem(index)}
-          >
-            {item} ◉
-          </div>
-        ))}
+    <div style={{ paddingTop: "70px" }}>
+        <AnimatePresence>
+          {wheelVisible && ( <div className="wheel-container">
+            <motion.div
+              className={`wheel ${spinning}`}
+              style={wheelVars}
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { duration: 0.5 } }} // Animation for wheel disappearance
+            >
+              {items.map((item, index) => (
+                <div
+                  className="wheel-item"
+                  key={index}
+                  style={{ "--item-nb": index }}
+                  onClick={() => selectItem(index)}
+                >
+                  {item} ◉
+                </div>
+              ))}
+            </motion.div>
+            </div>)}
+        </AnimatePresence>
+      <div>
+        <AnimatePresence>
+          {showCarousel && (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -50 }}
+              transition={{ duration: 0.5 }}
+              className="carousel-container"
+            >
+              <Slider {...settings}>
+                {carouselData.map((imagePath, index) => (
+                  <div key={index} className="carousel-item">
+                    <motion.img
+                      src={imagePath}
+                      alt={`Image ${index + 1}`}
+                      style={{
+                        width: "100%",
+                        height: "200px",
+                        objectFit: "cover",
+                      }}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{
+                        opacity:
+                          isMobile && index === currentSlide
+                            ? 1
+                            : isMobile
+                            ? 0.7
+                            : index === (currentSlide + 1) % carouselData.length
+                            ? 1
+                            : 0.7,
+                        scale:
+                          isMobile && index === currentSlide
+                            ? 1
+                            : isMobile
+                            ? 0.8
+                            : index === (currentSlide + 1) % carouselData.length
+                            ? 1
+                            : 0.8,
+                      }}
+                      transition={{ duration: 0.5 }}
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-      {/* {selectedItem !== null && (
-        <div className="selected-number">Selected: {items[selectedItem]}</div>
-      )} */}
       <AnimatePresence>
-        {showCarousel && (
+        {showGif && (
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.5 }}
-            className="carousel-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, transition: { duration: 0.5 } }}
+            className="gif-container"
           >
-       <Slider {...settings}>
-  {carouselData.map((imagePath, index) => (
-    <div key={index} className="carousel-item">
-      <img src={imagePath} alt={`Image ${index + 1}`} style={{ width: '100%', height: 'auto' }} />
-    </div>
-  ))}
-</Slider>
-
+            <img
+              src="/path/to/your/gif.gif"
+              alt="Loading..."
+              style={{ width: "100%", height: "auto" }}
+            />
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
     </div>
   );
 };
