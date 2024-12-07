@@ -55,7 +55,7 @@ const Segments = () => {
             <img
             src={segment.logo}
             alt={`${segment.title} logo`}
-            className="w-32 h-30"
+            className="w-32 h-32"
             />
 
             </div>

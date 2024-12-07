@@ -1,4 +1,4 @@
-// components/FlashbackFridayVideos.js
+
 "use client";
 
 import React from "react";
@@ -30,7 +30,7 @@ const flashbackVideos = [
 
 const FlashbackFridayVideos = () => {
   return (
-    <div className="flashback-friday-section text-white">
+    <div className="flashback-friday-section  text-white">
       <h2 className="text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide">FLASHBACK FRIDAY VIDEOS</h2>
       <div className="video-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {flashbackVideos.map((video, index) => (
