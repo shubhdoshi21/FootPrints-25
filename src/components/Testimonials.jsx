@@ -32,7 +32,6 @@ const testimonialsData = [
       "Today's generation can do great things, all you need is to think beyond your capacity and stamina! Even the name of this college has a blessing in itself.",
     photo: "/path/to/pawan-aggarwal.png",
   },
-  // Add more testimonials as needed
 ];
 
 const Testimonials = () => {
@@ -60,10 +59,15 @@ const Testimonials = () => {
     ],
   };
 
-  // Variants for the fade-up animation
+  // Animation Variants
   const fadeUpVariant = {
-    hidden: { opacity: 0, y: 50 }, // Start invisible and slightly below
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }, // Fade-in and move up
+    hidden: { opacity: 0, y: 50 }, // Start invisible and below
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8 },
+    },
+    reverse: { opacity: 0, y: -50, transition: { duration: 0.8 } }, // Reverse for scroll up
   };
 
   return (
@@ -71,12 +75,16 @@ const Testimonials = () => {
       className="testimonials-section py-16 px-8 text-white"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }} // Trigger animation when 10% of the section is in view
+      viewport={{ once: false, amount: 0.1 }} // Trigger animation on entering view
       variants={fadeUpVariant}
     >
       <motion.h2
         className={`text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}
         variants={fadeUpVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.1 }} // Continuous animation on scroll
+         
       >
         TESTIMONIALS
       </motion.h2>
@@ -85,7 +93,11 @@ const Testimonials = () => {
           <motion.div
             key={index}
             className="px-4"
-            variants={fadeUpVariant} // Apply fade-up animation to each card
+            initial="hidden"
+            whileInView="visible"
+            
+            viewport={{ once: false, amount: 0.2 }} // Continuous animation on scroll
+            variants={fadeUpVariant}
           >
             <div
               className="p-6 rounded-lg bg-opacity-85 cursor-pointer transition-all duration-300 relative transform hover:shadow-lg hover:scale-100 flex flex-col justify-between"

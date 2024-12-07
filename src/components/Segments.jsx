@@ -87,7 +87,7 @@ const Segments = () => {
               <img
                 src={segment.logo}
                 alt={`${segment.title} logo`}
-                className="w-24 h-24 sm:w-28 sm:h-28" // Adjusted for smaller screens
+                className="w-24 h-24 sm:w-28 sm:h-28  transform transition-transform duration-300 hover:scale-90" // Scale logo on hover" // Adjusted for smaller screens
               />
             </div>
             <h3 className="text-lg sm:text-xl font-semibold mb-2 text-center">{segment.title}</h3>
