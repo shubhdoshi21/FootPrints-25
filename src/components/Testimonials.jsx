@@ -1,29 +1,28 @@
-// components/Testimonials.js
 "use client";
 
 import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { motion } from "framer-motion"; // Import Framer Motion for animations
 import { Ranchers } from "@next/font/google";
 
 // Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
-
 
 const testimonialsData = [
   {
     name: "Peter C. Schultz",
     title: "Co-inventor of the fiber optics",
     quote:
-      "The organizers for these conference, everybody, everyone had been very friendly and helpful and I found very enthusiastic to work with FootPrints.",
-    photo: "/path/to/peter-schultz.png",
+      "The organizers for this conference, everybody, everyone had been very friendly and helpful and I found them very enthusiastic to work with FootPrints.",
+    photo: "/kaleido/karambirsingh.png",
   },
   {
     name: "Saurabh Jain",
     title: "Ex-Vice President @Paytm",
     quote:
-      "I liked the event very much, I am happy that students of this university had organized such a great event and the energy would be seen-the audience were very interactive.",
+      "I liked the event very much, I am happy that students of this university had organized such a great event and the energy could be seen—the audience was very interactive.",
     photo: "/path/to/saurabh-jain.png",
   },
   {
@@ -61,29 +60,57 @@ const Testimonials = () => {
     ],
   };
 
+  // Variants for the fade-up animation
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 50 }, // Start invisible and slightly below
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }, // Fade-in and move up
+  };
+
   return (
-    <div className="testimonials-section  py-16 px-8 text-white">
-      <h2 className="text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide">TESTIMONIALS</h2>
-      <Slider {...settings} className="max-w-5xl mx-auto">
+    <motion.div
+      className="testimonials-section py-16 px-8 text-white"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }} // Trigger animation when 10% of the section is in view
+      variants={fadeUpVariant}
+    >
+      <motion.h2
+        className={`text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}
+        variants={fadeUpVariant}
+      >
+        TESTIMONIALS
+      </motion.h2>
+      <Slider {...settings} className="max-w-6xl mx-auto">
         {testimonialsData.map((testimonial, index) => (
-          <div key={index} className="px-4">
-            <div className="p-6 rounded-lg bg-opacity-85 border cursor-pointer transition-all duration-300 relative transform "
-            style={{ borderColor: "#a84343", borderWidth: "1.5px" }}>
-              <p className="italic text-lg mb-4">"{testimonial.quote}"</p>
+          <motion.div
+            key={index}
+            className="px-4"
+            variants={fadeUpVariant} // Apply fade-up animation to each card
+          >
+            <div
+              className="p-6 rounded-lg bg-opacity-85 cursor-pointer transition-all duration-300 relative transform hover:shadow-lg hover:scale-100 flex flex-col justify-between"
+              style={{
+                backgroundColor: "rgba(151, 25, 25, 0.2)",
+                boxShadow: "0 5px 8px rgba(0, 0, 0, 0.5)", // Black shadow effect
+              }}
+            >
+              <p className="italic text-lg mb-4 flex-grow text-center">{`"${testimonial.quote}"`}</p>
               <div className="flex items-center justify-center mb-4">
                 <img
                   src={testimonial.photo}
                   alt={testimonial.name}
-                  className="w-16 h-16 rounded-full"
+                  className="w-24 h-24 rounded-full object-cover"
                 />
               </div>
-              <h3 className="font-semibold text-xl">{testimonial.name}</h3>
-              <p className="text-sm text-gray-400">{testimonial.title}</p>
+              <div className="flex flex-col items-center justify-center">
+                <h3 className="font-semibold text-xl text-center">{testimonial.name}</h3>
+                <p className="text-sm text-gray-400 text-center">{testimonial.title}</p>
+              </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </Slider>
-    </div>
+    </motion.div>
   );
 };
 
