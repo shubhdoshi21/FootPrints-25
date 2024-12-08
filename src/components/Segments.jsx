@@ -14,12 +14,11 @@ const segmentsData = [
   { title: "FOOTPRINTS STOCK EXCHANGE", description: "Simulate stock trading and investments.", logo: "images/fse1.png" },
   { title: "VIRTUOSITY", description: "Engage in a world of virtual gaming and fun.", logo: "images/VIRTUO1.png" },
   { title: "FOOTPRINTS SOCIAL RESPONSIBILITY", description: "Promote social responsibility initiatives and projects.", logo: "images/FSR1.png" },
-  { title: "SCHITRON", description: "Technical events and knowledge-based activities.", logo: "images/schitron1.png" },
+  { title: "SCHITRON", description: "Technical events and knowledge-based activities.", logo: "images/schitronn.png" },
   { title: "MASCOT", description: "Robotics and automation challenges.", logo: "images/mascot1.png" },
 ];
 
 const Segments = () => {
-  const [activeSegment, setActiveSegment] = useState(null);
   const [visibleIndices, setVisibleIndices] = useState([]);
   const cardRefs = useRef([]);
 
@@ -34,7 +33,7 @@ const Segments = () => {
         });
       },
       {
-        threshold: 0.15, 
+        threshold: 0.1, // Trigger when 10% of the element is visible
       }
     );
 
@@ -46,7 +45,9 @@ const Segments = () => {
   }, []);
 
   const handleCardClick = (index) => {
-    setActiveSegment(activeSegment === index ? null : index); // Toggle card
+    setVisibleIndices((prev) => 
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
   };
 
   return (
@@ -57,9 +58,9 @@ const Segments = () => {
       className="segments-section text-white"
     >
       <motion.h2
-        initial={{ opacity: 0, y: -150 }} 
+        initial={{ opacity: 0, y: -150 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }} 
+        transition={{ duration: 1 }}
         className={`text-4xl font-bold mb-8 text-center ${ranchers.className} tracking-wide`}
       >
         SEGMENTS
@@ -72,12 +73,11 @@ const Segments = () => {
             ref={(el) => (cardRefs.current[index] = el)}
             data-index={index}
             onClick={() => handleCardClick(index)}
-            className={`p-4 rounded-lg bg-opacity-85 border cursor-pointer transition-all ease-out duration-1000 relative mx-auto ${
-              visibleIndices.includes(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
-            }`}
+            className={`p-4 rounded-lg bg-opacity-85 border cursor-pointer transition-all ease-out duration-1000 relative mx-auto
+              ${visibleIndices.includes(index) ? "fade-up" : "opacity-0 translate-y-8"}`}
             style={{
-              width: "280px", // Fixed width for consistent card size
-              minHeight: activeSegment === index ? "auto" : "220px", // Smaller initial height
+              width: "280px",
+              minHeight: "220px",
               borderColor: "#a84343",
               borderWidth: "2px",
               boxShadow: "0 0 5px 1px #a84343",
@@ -87,13 +87,13 @@ const Segments = () => {
               <img
                 src={segment.logo}
                 alt={`${segment.title} logo`}
-                className="w-24 h-24 sm:w-28 sm:h-28  transform transition-transform duration-300 hover:scale-90" // Scale logo on hover" // Adjusted for smaller screens
+                className="w-24 h-24 sm:w-28 sm:h-28 transform transition-transform duration-300 hover:scale-90"
               />
             </div>
             <h3 className="text-lg sm:text-xl font-semibold mb-2 text-center">{segment.title}</h3>
-            {activeSegment === index && (
-              <p className="text-center text-gray-300 mt-2 text-sm sm:text-base">{segment.description}</p>
-            )}
+            <p className="text-center text-gray-300 mt-2 text-sm sm:text-base">
+              {segment.description}
+            </p>
           </div>
         ))}
       </div>
