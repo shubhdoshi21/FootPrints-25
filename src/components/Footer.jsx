@@ -30,7 +30,7 @@ const Footer = () => {
         {/* University Logo */}
         <div className="logo flex-1 flex justify-center md:justify-center">
           <img
-            src="images/MSUlogo.png" // Placeholder for university logo
+            src="/images/msu(white)logo.png" // Placeholder for university logo
             alt="University Logo"
             className="h-24 transition-transform transform hover:scale-110"
           />
@@ -49,26 +49,59 @@ const Footer = () => {
           </p>
           {/* Web Team Button */}
           <Link href="/webteam">
-            <button className="bg-blue-500 text-white mt-4 p-2 rounded-md hover:bg-blue-400">Web Team</button>
+            <button className="bg-transperent-500 text-white mt-4 p-2 rounded-md hover:bg-blue-400">Web Team</button>
           </Link>
         </div>
       </div>
 
       {/* Social Media Links */}
-      <div className="social-media flex justify-center mt-8 space-x-4 text-2xl">
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i className="fab fa-instagram"></i>
-        </a>
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <i className="fab fa-facebook"></i>
-        </a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-          <i className="fab fa-youtube"></i>
-        </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i className="fab fa-linkedin"></i>
-        </a>
-      </div>
+     {/* Social Media Links */}
+<div className="social-media flex justify-center mt-8 space-x-6 text-2xl">
+  {/* Instagram */}
+  <a
+    href="https://instagram.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+    className="hover:text-pink-500"
+  >
+    <i className="fab fa-instagram"></i>
+  </a>
+
+  {/* Facebook */}
+  <a
+    href="https://facebook.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+    className="hover:text-blue-500"
+  >
+    <i className="fab fa-facebook"></i>
+  </a>
+
+  {/* YouTube */}
+  <a
+    href="https://youtube.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="YouTube"
+    className="hover:text-red-500"
+  >
+    <i className="fab fa-youtube"></i>
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://linkedin.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="hover:text-blue-700"
+  >
+    <i className="fab fa-linkedin"></i>
+  </a>
+</div>
+
     </div>
   );
 };

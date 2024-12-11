@@ -362,6 +362,85 @@ a:hover {
 };
 
 
+.footer {
+  background-color: rgba(0, 0, 0, 0.2); /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 50px 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Newsletter Signup Styling */
+.newsletter input,
+.contact-info button,
+.newsletter button {
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  border: 2px solid rgba(113, 8, 8, 0.7);
+  
+}
+
+/* Button Hover Effects */
+.newsletter button:hover,
+.contact-info button:hover,
+.footer button:hover {
+  background-color: rgb(176, 10, 10); /* Blue shade on hover */
+  transform: translateY(-5px);
+}
+* Social Media Links */
+.social-media a {
+  color: #fff;
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #b00a0a; /* Blue color on hover */
+  transform: translateY(-5px);
+}
+
+/* Footer Logo */
+.logo img {
+  transition: transform 0.3s ease-in-out;
+  width: 150%; /* Adjust the percentage as needed */
+  height: auto;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Contact Info Hover */
+.contact-info button:hover {
+  background-color: #b00a0a;
+  transform: translateY(-5px);
+}
+
+/* Smooth Scroll for Footer Links */
+a {
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #b00a0a; /* Blue on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+  }
+
+  .newsletter,
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-media {
+    flex-direction: column;
+  }
+}
+
+
 
 
 

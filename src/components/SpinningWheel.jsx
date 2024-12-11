@@ -170,7 +170,7 @@ const SpinningWheel = () => {
                   style={{ "--item-nb": index }}
                   onClick={() => selectItem(index)}
                 >
-                  {item} ◉
+                  {item} 
                 </div>
               ))}
             </motion.div>
