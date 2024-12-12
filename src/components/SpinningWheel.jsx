@@ -83,13 +83,20 @@ const SpinningWheel = () => {
         "/images/3/image7.jpg",
       ],
       4: [
-        "/images/4/image1.jpg",
-        "/images/4/image2.jpg",
-        "/images/4/image3.jpg",
-        "/images/4/image4.jpg",
-        "/images/4/image5.jpg",
-        "/images/24/image6.jpg",
-        "/images/24/image7.jpg",
+        "/images/244/image1.jpg",
+        "/images/244/image2.jpg",
+        "/images/244/image3.jpg",
+        //"/images/244/image4.jpg",
+        "/images/244/image7.jpg",
+        "/images/244/image5.jpg",
+        "/images/244/image6.jpg",
+        //"/images/244/image7.jpg",
+        "/images/244/image8.jpg",
+        "/images/244/image9.jpg",
+        "/images/244/image10.jpg",
+        "/images/244/image11.jpg"
+        
+
       ],
       24: [
         "/images/24/image1.jpg",
@@ -139,7 +146,7 @@ const SpinningWheel = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     arrows: true,
     beforeChange: (current, next) => setCurrentSlide(next),
     responsive: [
