@@ -11,9 +11,11 @@ import { Ranchers } from "@next/font/google";
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
 const galleryImages = [
-  { src: "/path/to/image1.png", alt: "Image 1" },
-  { src: "/path/to/image2.png", alt: "Image 2" },
-  { src: "/path/to/image3.png", alt: "Image 3" },
+  { src: "/images/244/image1.jpg", alt: "Image 1" },
+  { src:  "/images/244/image2.jpg", alt: "Image 2" },
+  { src:  "/images/244/image3.jpg" ,alt: "Image 3" },
+  { src:  "/images/244/image6.jpg" ,alt: "Image 3" },
+  { src:  "/images/244/image5.jpg" ,alt: "Image 3" },
   // Add more image objects here
 ];
 

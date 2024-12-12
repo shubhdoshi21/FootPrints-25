@@ -11,12 +11,12 @@ const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
 const flashbackVideos = [
   {
-    imageSrc: "/path/to/image1.jpg", // Replace with the actual path to the image or thumbnail
+    imageSrc: "/images/244/image10.jpg", // Replace with the actual path to the image or thumbnail
     title: "Motorcycle Stunt",
     url: "https://www.instagram.com/reel/C-ccggmSc-L/?igsh=bDI0dWtrMmI4eWR0",
   },
   {
-    imageSrc: "/path/to/image2.jpg", // Replace with the actual path to the image or thumbnail
+    imageSrc: "/images/244/image1.jpg", // Replace with the actual path to the image or thumbnail
     title: "Music Performance",
     url: "https://www.instagram.com/reel/C8v-l-btSm1/?igsh=dXFqbGk4MDFteXpo",
   },
