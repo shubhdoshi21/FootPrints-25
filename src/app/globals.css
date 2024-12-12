@@ -1,9 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ShaderBackground.css */
 
 :root {
-  --wheel-font: 'Lato', 'Quicksand', sans-serif;
+  --wheel-font: "Lato", "Quicksand", sans-serif;
   --wheel-size: 500px;
   --wheel-slice-spacing: 65px;
   --wheel-border-size: 5px;
@@ -18,10 +19,17 @@
   --reset-duration: 1s;
 }
 
-
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
 
 .wheel-container {
-
   display: block;
   position: relative;
   box-sizing: content-box;
@@ -29,17 +37,16 @@
   height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
   padding: 3px;
   margin: auto;
-  
+
   background-color: var(--neutral-color);
   border: solid var(--wheel-color) 3px;
   border-radius: 50%;
   user-select: none;
-  
 }
 
 .wheel-container::before,
 .wheel-container::after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   height: 0;
@@ -79,14 +86,18 @@
 
 .wheel.spinning {
   transition: transform var(--spinning-duration);
-  transform: rotate(calc(var(--nb-turn) * 360deg + (-360deg * var(--selected-item) / var(--nb-item, 1))));
+  transform: rotate(
+    calc(
+      var(--nb-turn) * 360deg +
+        (-360deg * var(--selected-item) / var(--nb-item, 1))
+    )
+  );
 }
-
 
 .wheel::after {
   display: block;
   position: absolute;
-  content: '';
+  content: "";
   background-color: var(--neutral-color);
   width: 25px;
   height: 25px;
@@ -105,7 +116,8 @@
   left: 50%;
   width: 50%;
   transform-origin: center left;
-  transform: translateY(-50%) rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
+  transform: translateY(-50%)
+    rotate(calc(var(--item-nb) * (360deg / var(--nb-item, 1))));
   color: var(--neutral-color);
   text-align: right;
   padding: 0 10px 0 50px;
@@ -113,7 +125,7 @@
 }
 
 .wheel-item:before {
-  content: ' ';
+  content: " ";
   display: block;
   position: absolute;
   box-sizing: border-box;
@@ -125,20 +137,22 @@
   transform: translate(-50%, -50%);
   padding-left: 0px;
   opacity: 0.25;
-  --slice-max-width: calc(var(--PI) * var(--wheel-size) + var(--wheel-size) / 2);
-  --slice-width: calc((var(--slice-max-width) / var(--nb-item)) - var(--wheel-slice-spacing));
+  --slice-max-width: calc(
+    var(--PI) * var(--wheel-size) + var(--wheel-size) / 2
+  );
+  --slice-width: calc(
+    (var(--slice-max-width) / var(--nb-item)) - var(--wheel-slice-spacing)
+  );
   border: solid transparent calc(var(--slice-width) * 2.5);
   border-left: solid transparent 0;
   border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
 }
 
-
-
-
 .carousel-container {
+  display: block;
+  width: 70%;
+  margin: auto;
   margin-top: 20px;
-  padding: 20px;
-  background-color: #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -146,17 +160,9 @@
 .carousel-item {
   text-align: center;
   padding: 20px;
-}
-
-.carousel-item h3 {
-  font-size: 24px;
-  color: var(--wheel-color);
-  margin-bottom: 10px;
-}
-
-.carousel-item p {
-  font-size: 16px;
-  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Custom styles for react-slick */
@@ -180,10 +186,10 @@
 
 .slick-prev:before,
 .slick-next:before {
-  font-family: 'slick';
+  font-family: "slick";
   font-size: 20px;
   line-height: 1;
-  opacity: .75;
+  opacity: 0.75;
   color: var(--wheel-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -205,14 +211,241 @@
   color: var(--wheel-color);
 }
 
-
-
 @layer utilities {
   .hover\:border-glow:hover {
     box-shadow: 0 0 15px rgba(255, 99, 71, 0.7), 0 0 30px rgba(255, 99, 71, 0.5);
     border-color: rgba(255, 99, 71, 0.9);
   }
 }
+
+/* Footer Background */
+.footer {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 50px 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Newsletter Signup Styling */
+.newsletter input,
+.newsletter button {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* Button Hover Effects */
+.newsletter button:hover,
+.footer button:hover {
+  background-color: #1e90ff; /* Blue shade on hover */
+  transform: translateY(-5px);
+}
+
+/* Social Media Links */
+.social-media a {
+  color: #fff;
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #1e90ff; /* Blue color on hover */
+  transform: translateY(-5px);
+}
+
+/* Footer Logo */
+.logo img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Contact Info Hover */
+.contact-info button:hover {
+  background-color: #1e90ff;
+  transform: translateY(-5px);
+}
+
+/* Smooth Scroll for Footer Links */
+a {
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #1e90ff; /* Blue on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+  }
+
+  .newsletter,
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-media {
+    flex-direction: column;
+  }
+}
+
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 1s ease-in-out forwards;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.translate-y-4 {
+  transform: translateY(20px);
+}
+
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animations */
+.animate-fade-left {
+  animation: fade-left 1s ease-out;
+}
+
+.animate-fade-right {
+  animation: fade-right 1s ease-out;
+}
+
+.animate-fade-down {
+  animation: fade-down 1s ease-out;
+};
+
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.2); /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 50px 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Newsletter Signup Styling */
+.newsletter input,
+.contact-info button,
+.newsletter button {
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  border: 2px solid rgba(113, 8, 8, 0.7);
+  
+}
+
+/* Button Hover Effects */
+.newsletter button:hover,
+.contact-info button:hover,
+.footer button:hover {
+  background-color: rgb(176, 10, 10); /* Blue shade on hover */
+  transform: translateY(-5px);
+}
+* Social Media Links */
+.social-media a {
+  color: #fff;
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #b00a0a; /* Blue color on hover */
+  transform: translateY(-5px);
+}
+
+/* Footer Logo */
+.logo img {
+  transition: transform 0.3s ease-in-out;
+  width: 150%; /* Adjust the percentage as needed */
+  height: auto;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Contact Info Hover */
+.contact-info button:hover {
+  background-color: #b00a0a;
+  transform: translateY(-5px);
+}
+
+/* Smooth Scroll for Footer Links */
+a {
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #b00a0a; /* Blue on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+  }
+
+  .newsletter,
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-media {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
 
 
 

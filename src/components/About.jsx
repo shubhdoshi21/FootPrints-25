@@ -1,4 +1,3 @@
-// components/About.js
 "use client";
 
 import React from "react";
@@ -9,17 +8,20 @@ import { Ranchers } from "@next/font/google";
 // Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
-
 const About = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="about-section  text-white py-16 px-8"
+      className="about-section text-white py-16 px-8"
     >
       <div className="max-w-4xl mx-auto text-center">
-      <h2 className={`text-4xl font-bold mb-6 ${ranchers.className} tracking-wide`}>About FootPrints</h2>
+        <h2
+          className={`text-4xl font-bold mb-6 ${ranchers.className} tracking-wide`}
+        >
+          About FootPrints
+        </h2>
         <p className="text-lg leading-relaxed text-gray-300">
           FootPrints is a National Level Technical Fiesta, which was incepted
           in 2001 by Sir C N Murthy. It has been rising in colossal
