@@ -35,6 +35,8 @@ const SpinningWheel = () => {
     if (items[index] === 25) {
       // If 25 is selected, hide the wheel and show the GIF
       setWheelVisible(false);
+      setCarouselData([]);
+      setShowCarousel(false);
       setShowGif(true);
     } else {
       setTimeout(() => {
@@ -162,8 +164,8 @@ const SpinningWheel = () => {
 
   return (
     <div style={{ paddingTop: "70px" }}>
-        <AnimatePresence>
-          {wheelVisible && ( <div className="wheel-container">
+        {wheelVisible &&<AnimatePresence>
+           ( <div className="wheel-container">
             <motion.div
               className={`wheel ${spinning}`}
               style={wheelVars}
@@ -181,8 +183,8 @@ const SpinningWheel = () => {
                 </div>
               ))}
             </motion.div>
-            </div>)}
-        </AnimatePresence>
+            </div>)
+        </AnimatePresence>}
       <div>
         <AnimatePresence>
           {showCarousel && (
