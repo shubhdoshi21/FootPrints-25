@@ -1,4 +1,3 @@
-// components/VideosSection.js
 "use client";
 
 import React from "react";
@@ -9,34 +8,43 @@ import { Ranchers } from "@next/font/google";
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
 const videoLinks = [
-  // { id: "4TER0lVOsNg?si=Wk9UIQ4GDxILW_Fw", title: "Footprints'24 Official Teaser" },
   { id: "V5ROgRVso90?si=9vPShkQzlMgTkN9j", title: "Kaleidoscope Launch Video" },
-  { id: "-8waHD5yGQE?si=yPKlwCxl8uJbjaNM", title: "ootprints'24 Official AfterMovie" },
+  {
+    id: "-8waHD5yGQE?si=yPKlwCxl8uJbjaNM",
+    title: "Footprints'24 Official AfterMovie",
+  },
   { id: "PS85aJvTNKM?si=8jgyTRJkf4RSTI8G", title: "Aditya Gadhvi" },
-  // Add more video objects here
 ];
 
 const VideosSection = () => {
   return (
-    <div className="videos-section py-16 px-8 text-white text-center">
+    <div className="videos-section py-8 sm:py-16 px-4 sm:px-8 text-white text-center">
       <h2
-        className={`text-4xl font-bold mb-6 ${ranchers.className} tracking-wide`}
+        className={`text-3xl sm:text-4xl font-bold mb-6 ${ranchers.className} tracking-wide`}
       >
         VIDEOS
       </h2>
-      <div className="video-grid grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-4 sm:gap-6 max-w-6xl mx-auto">
         {videoLinks.map((video, index) => (
-          <VideoCard key={index} video={video} index={index} />
+          <VideoCard
+            key={index}
+            video={video}
+            index={index}
+            className={`
+              w-full sm:w-[calc(50%-1.5rem)]
+              ${index === 2 ? "sm:mx-auto" : ""}
+            `}
+          />
         ))}
       </div>
     </div>
   );
 };
 
-const VideoCard = ({ video, index }) => {
-  const { ref, inView, entry } = useInView({
-    threshold: 0.1, // Trigger animation when 10% of the video card is in view
-    triggerOnce: false, // Allow multiple triggers
+const VideoCard = ({ video, index, className = "" }) => {
+  const { ref, inView } = useInView({
+    threshold: 0.1,
+    triggerOnce: false,
   });
 
   // Determine animation direction based on the index
@@ -45,21 +53,20 @@ const VideoCard = ({ video, index }) => {
   return (
     <div
       ref={ref}
-      className={`transition-transform duration-700 transform ${
-        inView
-          ? "translate-x-0 opacity-100" // Element fully in view
-          : `${direction} opacity-0` // Out of view, slide back
-      }`}
+      className={`
+        transition-all duration-700 transform p-2
+        ${inView ? "translate-x-0 opacity-100" : `${direction} opacity-0`}
+        ${className}
+        sm:translate-x-0  // Disable translate on small screens
+      `}
     >
       <div className="relative overflow-hidden rounded-lg shadow-lg">
         <iframe
-          width="100%"
-          height="315"
           src={`https://www.youtube.com/embed/${video.id}`}
           title={video.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          className="w-full h-66"
+          className="w-full aspect-video"
         ></iframe>
       </div>
     </div>
