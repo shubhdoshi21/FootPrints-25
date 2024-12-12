@@ -140,7 +140,6 @@ const Testimonials = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.1 }} // Continuous animation on scroll
-         
       >
         TESTIMONIALS
       </motion.h2>
@@ -151,7 +150,6 @@ const Testimonials = () => {
             className="px-4"
             initial="hidden"
             whileInView="visible"
-            
             viewport={{ once: false, amount: 0.2 }} // Continuous animation on scroll
             variants={fadeUpVariant}
           >
@@ -160,7 +158,7 @@ const Testimonials = () => {
               style={{
                 backgroundColor: "rgba(151, 25, 25, 0.2)",
                 boxShadow: "0 5px 8px rgba(0, 0, 0, 0.5)", // Black shadow effect
-                
+                minHeight: "500px",
               }}
             >
               <p className="italic text-lg mb-4 flex-grow text-center">{`"${testimonial.quote}"`}</p>
@@ -172,8 +170,12 @@ const Testimonials = () => {
                 />
               </div>
               <div className="flex flex-col items-center justify-center">
-                <h3 className="font-semibold text-xl text-center">{testimonial.name}</h3>
-                <p className="text-sm text-gray-400 text-center">{testimonial.title}</p>
+                <h3 className="font-semibold text-xl text-center">
+                  {testimonial.name}
+                </h3>
+                <p className="text-sm text-gray-400 text-center">
+                  {testimonial.title}
+                </p>
               </div>
             </div>
           </motion.div>
