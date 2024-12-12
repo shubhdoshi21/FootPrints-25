@@ -218,20 +218,236 @@ body {
   }
 }
 
-
-/* Apply styles to all scrollbars */
-::-webkit-scrollbar {
-  width: 12px; /* Set scrollbar width */
-  height: 12px; /* Set scrollbar height for horizontal scrollbars */
+/* Footer Background */
+.footer {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 50px 0;
+  transition: background-color 0.3s ease-in-out;
 }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #a72a2a, #330000); /* Gradient color */
-  border-radius: 20px; /* Makes the scrollbar rounded */
-  border: 3px solid #fff; /* Adds space and contrast */
+/* Newsletter Signup Styling */
+.newsletter input,
+.newsletter button {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
 }
 
-::-webkit-scrollbar-track {
-  background: #f0f0f0; /* Track background color */
-  border-radius: 20px;
+/* Button Hover Effects */
+.newsletter button:hover,
+.footer button:hover {
+  background-color: #1e90ff; /* Blue shade on hover */
+  transform: translateY(-5px);
 }
+
+/* Social Media Links */
+.social-media a {
+  color: #fff;
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #1e90ff; /* Blue color on hover */
+  transform: translateY(-5px);
+}
+
+/* Footer Logo */
+.logo img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Contact Info Hover */
+.contact-info button:hover {
+  background-color: #1e90ff;
+  transform: translateY(-5px);
+}
+
+/* Smooth Scroll for Footer Links */
+a {
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #1e90ff; /* Blue on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+  }
+
+  .newsletter,
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-media {
+    flex-direction: column;
+  }
+}
+
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 1s ease-in-out forwards;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.translate-y-4 {
+  transform: translateY(20px);
+}
+
+@keyframes fade-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animations */
+.animate-fade-left {
+  animation: fade-left 1s ease-out;
+}
+
+.animate-fade-right {
+  animation: fade-right 1s ease-out;
+}
+
+.animate-fade-down {
+  animation: fade-down 1s ease-out;
+};
+
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.2); /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 50px 0;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Newsletter Signup Styling */
+.newsletter input,
+.contact-info button,
+.newsletter button {
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  border: 2px solid rgba(113, 8, 8, 0.7);
+  
+}
+
+/* Button Hover Effects */
+.newsletter button:hover,
+.contact-info button:hover,
+.footer button:hover {
+  background-color: rgb(176, 10, 10); /* Blue shade on hover */
+  transform: translateY(-5px);
+}
+* Social Media Links */
+.social-media a {
+  color: #fff;
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media a:hover {
+  color: #b00a0a; /* Blue color on hover */
+  transform: translateY(-5px);
+}
+
+/* Footer Logo */
+.logo img {
+  transition: transform 0.3s ease-in-out;
+  width: 150%; /* Adjust the percentage as needed */
+  height: auto;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Contact Info Hover */
+.contact-info button:hover {
+  background-color: #b00a0a;
+  transform: translateY(-5px);
+}
+
+/* Smooth Scroll for Footer Links */
+a {
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #b00a0a; /* Blue on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+  }
+
+  .newsletter,
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-media {
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
