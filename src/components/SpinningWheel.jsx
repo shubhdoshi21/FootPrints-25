@@ -100,14 +100,14 @@ const SpinningWheel = () => {
         "/images/24/image6.jpg",
         "/images/24/image7.jpg",
       ],
-      24: [
-        "/images/24/image1.jpg",
-        "/images/24/image2.jpg",
-        "/images/24/image3.jpg",
-        "/images/24/image4.jpg",
-        "/images/24/image5.jpg",
-        "/images/24/image6.jpg",
-        "/images/24/image7.jpg",
+      22: [
+        "/images/22/image1.jpg",
+        "/images/22/image2.jpg",
+        "/images/22/image3.jpg",
+        "/images/22/image4.jpg",
+        "/images/22/image5.jpg",
+        "/images/22/image6.jpg",
+        "/images/22/image7.jpg",
       ],
 
       24: [
@@ -139,7 +139,7 @@ const SpinningWheel = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 1000,
     arrows: true,
     beforeChange: (current, next) => setCurrentSlide(next),
     responsive: [
@@ -234,7 +234,7 @@ const SpinningWheel = () => {
             className="gif-container"
           >
             <img
-              src="/path/to/your/gif.gif"
+              src="/images/COMINGSOON10.gif"
               alt="Loading..."
               style={{ width: "100%", height: "auto" }}
             />
