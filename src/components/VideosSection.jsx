@@ -9,10 +9,10 @@ import { Ranchers } from "@next/font/google";
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
 const videoLinks = [
-  { id: "your_video_id_1", title: "Footprints'24 Official Teaser" },
-  { id: "your_video_id_2", title: "Kaleidoscope Launch Video" },
-  { id: "your_video_id_2", title: "Kaleidoscope Launch Video" },
-  { id: "your_video_id_2", title: "Kaleidoscope Launch Video" },
+  // { id: "4TER0lVOsNg?si=Wk9UIQ4GDxILW_Fw", title: "Footprints'24 Official Teaser" },
+  { id: "V5ROgRVso90?si=9vPShkQzlMgTkN9j", title: "Kaleidoscope Launch Video" },
+  { id: "-8waHD5yGQE?si=yPKlwCxl8uJbjaNM", title: "ootprints'24 Official AfterMovie" },
+  { id: "PS85aJvTNKM?si=8jgyTRJkf4RSTI8G", title: "Aditya Gadhvi" },
   // Add more video objects here
 ];
 
@@ -59,7 +59,7 @@ const VideoCard = ({ video, index }) => {
           title={video.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          className="w-full h-64"
+          className="w-full h-66"
         ></iframe>
       </div>
     </div>

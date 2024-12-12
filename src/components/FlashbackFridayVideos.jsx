@@ -13,17 +13,17 @@ const flashbackVideos = [
   {
     imageSrc: "/path/to/image1.jpg", // Replace with the actual path to the image or thumbnail
     title: "Motorcycle Stunt",
-    url: "https://www.instagram.com/reel/CymwsvAqR2U/?igshid=NTc4MTIwNi2YQ==",
+    url: "https://www.instagram.com/reel/C-ccggmSc-L/?igsh=bDI0dWtrMmI4eWR0",
   },
   {
     imageSrc: "/path/to/image2.jpg", // Replace with the actual path to the image or thumbnail
     title: "Music Performance",
-    url: "https://www.instagram.com/reel/some_other_video_id/",
+    url: "https://www.instagram.com/reel/C8v-l-btSm1/?igsh=dXFqbGk4MDFteXpo",
   },
   {
     imageSrc: "/path/to/image3.jpg", // Replace with the actual path to the image or thumbnail
     title: "Charity Event",
-    url: "https://www.instagram.com/reel/another_video_id/",
+    url: "https://www.instagram.com/reel/DBwGQACteqF/?igsh=MThpdW5za3NreXQ0Zg==",
   },
   // Add more video objects here
 ];
