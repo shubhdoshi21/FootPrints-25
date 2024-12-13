@@ -184,6 +184,17 @@ body {
   background: transparent;
 }
 
+/* Global or in your component's styles */
+.hide-scrollbar {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
+
 .slick-prev:before,
 .slick-next:before {
   font-family: "slick";
@@ -440,8 +451,83 @@ a:hover {
   }
 }
 
+@media (max-width: 768px) {
+  :root {
+    --wheel-size: 250px; 
+    --wheel-border-size: 2px;
+  }
 
+  .wheel-container {
+    width: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
+    height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
+  }
 
+  .wheel {
+    width: var(--wheel-size);
+    height: var(--wheel-size);
+  }
+
+  .wheel::after {
+    width: 20px;
+    height: 20px;
+  }
+
+  .wheel-item {
+    padding: 0 5px 0 20px; 
+    font-size: 0.8rem; 
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 80%; 
+    margin-top: 10px;
+  }
+
+  .carousel-item {
+    padding: 15px; 
+    font-size: 0.9rem; 
+  }
+
+  .slick-prev,
+  .slick-next {
+    width: 16px;
+    height: 16px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 16px; 
+  }
+
+  .slick-prev {
+    left: -15px;
+  }
+
+  .slick-next {
+    right: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    margin-top: 5px;
+  }
+
+  .carousel-item {
+    padding: 10px; 
+    font-size: 0.8rem;
+  }
+
+  .slick-dots li button:before {
+    font-size: 10px; 
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 14px;
+  }
+}
 
 
 
