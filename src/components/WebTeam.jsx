@@ -1,11 +1,14 @@
 "use client";
 
+
 import React, { useEffect } from 'react';
+
 
 const teamMembers = [
     {
         name: 'Ayesha Patel',
         position: 'Production Designer',
+        className: 'zoom-image',
         image: '/images/ayesha.jpg',
         social: {
             linkedin: 'http://www.linkedin.com/in/ayeshapatel07',
@@ -25,6 +28,7 @@ const teamMembers = [
     },
     {
         name: 'Meghana Vasava',
+        className: 'zoom-image',
         position: 'Customer Service',
         image: '/images/meghana.jpg',
         social: {
@@ -124,7 +128,8 @@ const WebTeam = () => {
                             <img
     src={member.image} // Use the `image` property
     alt={member.name}
-    className="w-full h-48 object-cover"
+    className={`w-full h-48 object-cover ${member.className || ''}`}
+
 />
 
                             <div className="p-6">

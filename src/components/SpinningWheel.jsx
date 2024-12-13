@@ -147,7 +147,7 @@ const SpinningWheel = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1000,
-    arrows: true,
+    arrows: false,
     beforeChange: (current, next) => setCurrentSlide(next),
     responsive: [
       {
