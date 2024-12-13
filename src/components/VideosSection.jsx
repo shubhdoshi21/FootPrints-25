@@ -14,6 +14,10 @@ const videoLinks = [
     title: "Footprints'24 Official AfterMovie",
   },
   { id: "PS85aJvTNKM?si=8jgyTRJkf4RSTI8G", title: "Aditya Gadhvi" },
+  // { id: "4TER0lVOsNg?si=Wk9UIQ4GDxILW_Fw", title: "Footprints'24 Official Teaser" },
+  
+  { id: "-8waHD5yGQE?si=yPKlwCxl8uJbjaNM", title: "Footprints'24 Official AfterMovie" },
+  {id : "nw49b7oyOqM?si=_bpyxYWcUJL4iiG" , title: "tunein tuesday"},
 ];
 
 const VideosSection = () => {
