@@ -28,20 +28,38 @@ const SpinningWheel = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  // const selectItem = (index) => {
+  //   setSelectedItem(index);
+  //   // Set carousel data based on the selected item
+  //   setCarouselData(getCarouselDataForItem(items[index]));
+  //   if (items[index] === 25) {
+  //     // If 25 is selected, hide the wheel and show the GIF
+  //     setWheelVisible(false);
+  //     setCarouselData([]);
+  //     setShowCarousel(false);
+  //     setShowGif(true);
+  //   } else {
+  //     setTimeout(() => {
+  //       setShowCarousel(true);
+  //     }, 4000);
+  //   }
+  // };
   const selectItem = (index) => {
     setSelectedItem(index);
-    // Set carousel data based on the selected item
-    setCarouselData(getCarouselDataForItem(items[index]));
+    const spinDuration = 4000; // Set spin duration (in milliseconds)
+  
+    // If 25 is selected, hide the wheel and show the GIF after the spin
     if (items[index] === 25) {
-      // If 25 is selected, hide the wheel and show the GIF
-      setWheelVisible(false);
-      setCarouselData([]);
-      setShowCarousel(false);
-      setShowGif(true);
-    } else {
       setTimeout(() => {
+        setWheelVisible(false);
+        setShowGif(true);
+      }, spinDuration); // Wait for the spin to complete
+    } else {
+      // For other items, show the carousel after the spin
+      setTimeout(() => {
+        setCarouselData(getCarouselDataForItem(items[index]));
         setShowCarousel(true);
-      }, 4000);
+      }, spinDuration); // Wait for the spin to complete
     }
   };
 
