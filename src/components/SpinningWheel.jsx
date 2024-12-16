@@ -182,93 +182,115 @@ const SpinningWheel = () => {
 
   return (
     <div style={{ paddingTop: "70px" }}>
-        {wheelVisible &&<AnimatePresence>
-           ( <div className="wheel-container">
-            <motion.div
-              className={`wheel ${spinning}`}
-              style={wheelVars}
-              initial={{ opacity: 1 }}
-              exit={{ opacity: 0, transition: { duration: 0.5 } }} // Animation for wheel disappearance
-            >
-              {items.map((item, index) => (
-                <div
-                  className="wheel-item"
-                  key={index}
-                  style={{ "--item-nb": index }}
-                  onClick={() => selectItem(index)}
-                >
-                  {item} ◉
+    <AnimatePresence>
+      {wheelVisible && (
+        <motion.div
+          className="wheel-container"
+          initial={{ opacity: 1 }}
+          exit={{
+            opacity: 0,
+            scale: 0.8,
+            transition: { duration: 0.8, ease: "easeInOut" },
+          }}
+          onAnimationComplete={() => {
+            // Ensure the GIF only appears after the wheel disappears
+            setWheelVisible(false);
+            setShowGif(true);
+          }}
+        >
+          <motion.div
+            className={`wheel ${spinning}`}
+            style={wheelVars}
+          >
+            {items.map((item, index) => (
+              <div
+                className="wheel-item"
+                key={index}
+                style={{ "--item-nb": index }}
+                onClick={() => selectItem(index)}
+              >
+                {item} ◉
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  
+    <div>
+      <AnimatePresence>
+        {showCarousel && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+            transition={{ duration: 0.5 }}
+            className="carousel-container"
+          >
+            <Slider {...settings}>
+              {carouselData.map((imagePath, index) => (
+                <div key={index} className="carousel-item">
+                  <motion.img
+                    src={imagePath}
+                    alt={`Image ${index + 1}`}
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      objectFit: "cover",
+                    }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{
+                      opacity:
+                        isMobile && index === currentSlide
+                          ? 1
+                          : isMobile
+                          ? 0.7
+                          : index === (currentSlide + 1) % carouselData.length
+                          ? 1
+                          : 0.7,
+                      scale:
+                        isMobile && index === currentSlide
+                          ? 1
+                          : isMobile
+                          ? 0.8
+                          : index === (currentSlide + 1) % carouselData.length
+                          ? 1
+                          : 0.8,
+                    }}
+                    transition={{ duration: 0.5 }}
+                  />
                 </div>
               ))}
-            </motion.div>
-            </div>)
-        </AnimatePresence>}
-      <div>
-        <AnimatePresence>
-          {showCarousel && (
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -50 }}
-              transition={{ duration: 0.5 }}
-              className="carousel-container"
-            >
-              <Slider {...settings}>
-                {carouselData.map((imagePath, index) => (
-                  <div key={index} className="carousel-item">
-                    <motion.img
-                      src={imagePath}
-                      alt={`Image ${index + 1}`}
-                      style={{
-                        width: "100%",
-                        height: "200px",
-                        objectFit: "cover",
-                      }}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{
-                        opacity:
-                          isMobile && index === currentSlide
-                            ? 1
-                            : isMobile
-                            ? 0.7
-                            : index === (currentSlide + 1) % carouselData.length
-                            ? 1
-                            : 0.7,
-                        scale:
-                          isMobile && index === currentSlide
-                            ? 1
-                            : isMobile
-                            ? 0.8
-                            : index === (currentSlide + 1) % carouselData.length
-                            ? 1
-                            : 0.8,
-                      }}
-                      transition={{ duration: 0.5 }}
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-      <AnimatePresence>
-        {showGif && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, transition: { duration: 0.5 } }}
-            className="gif-container"
-          >
-            <img
-              src="/images/COMINGSOON10.gif"
-              alt="Loading..."
-              style={{ width: "100%", height: "auto" }}
-            />
+            </Slider>
           </motion.div>
         )}
       </AnimatePresence>
     </div>
+  
+    <AnimatePresence>
+      {showGif && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0, transition: { duration: 0.5 } }}
+          className="gif-container"
+        >
+          <motion.img
+            src="/images/COMINGSOON10.gif"
+            alt="Loading..."
+            style={{ width: "100%", height: "auto" }}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        </motion.div>
+      )}
+    </AnimatePresence>
+  </div>
+  
   );
 };
 
