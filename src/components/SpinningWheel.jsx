@@ -84,15 +84,7 @@ const SpinningWheel = () => {
         "/images/2/image6.jpg",
         "/images/2/image7.jpg",
       ],
-      24: [
-        "/images/24/image1.jpg",
-        "/images/24/image2.jpg",
-        "/images/24/image3.jpg",
-        "/images/24/image4.jpg",
-        "/images/24/image5.jpg",
-        "/images/24/image6.jpg",
-        "/images/24/image7.jpg",
-      ],
+     
       3: [
         "/images/3/image1.jpg",
         "/images/3/image2.jpg",
@@ -118,15 +110,16 @@ const SpinningWheel = () => {
         
 
       ],
-      24: [
-        "/images/24/image1.jpg",
-        "/images/24/image5.jpg",
-        "/images/24/image3.jpg",
-        "/images/24/image4.jpg",
-        "/images/24/image5.jpg",
-        "/images/24/image6.jpg",
-        "/images/24/image7.jpg",
-      ],
+      21: [
+        "/images/21/21(1).png",
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+        "/images/21/21(2).png",
+        "/images/21/21(3).png",
+        "/images/21/21(4).png",
+        "/images/21/21(5).png",
+        "/images/21/21(6).png",
+        "/images/21/21(7).png",
+    ],
       22: [
         "/images/22/image1.jpg",
         "/images/22/image2.jpg",
@@ -136,15 +129,29 @@ const SpinningWheel = () => {
         "/images/22/image6.jpg",
         "/images/22/image7.jpg",
       ],
+      23: [
+        "/images/23/23(1).jpg",
+        "/images/23/23(2).jpg",
+        "/images/23/23(3).jpg",
+        "/images/23/23(4).jpg",
+        "/images/23/23(5).jpg",
+        "/images/23/23(6).jpg",
+    
+    ],
 
       24: [
         "/images/24/image1.jpg",
-        "/images/24/image5.jpg",
+        "/images/24/image2.jpg",
         "/images/24/image3.jpg",
         "/images/24/image4.jpg",
         "/images/24/image5.jpg",
         "/images/24/image6.jpg",
         "/images/24/image7.jpg",
+        "/images/24/image8.jpg",
+        "/images/24/image9.jpg",
+        "/images/24/image10.jpg",
+        "/images/24/image11.jpg",
+       
       ],
       // Add mappings for other numbers up to 25...
     };
@@ -152,6 +159,14 @@ const SpinningWheel = () => {
     // Return images for the selected item or fallback to an empty array
     return imageSets[item] || [];
   };
+  const getDisplayText = (item) => {
+    // Map items 11-20 to X1, X2, ..., X10
+    if (item >= 11 && item <= 20) {
+      return `X${item - 10}`;
+    }
+    return item; // Return the original number for other items
+  };
+  
 
   const wheelVars = {
     "--nb-item": items.length,
@@ -202,16 +217,16 @@ const SpinningWheel = () => {
             className={`wheel ${spinning}`}
             style={wheelVars}
           >
-            {items.map((item, index) => (
-              <div
-                className="wheel-item"
-                key={index}
-                style={{ "--item-nb": index }}
-                onClick={() => selectItem(index)}
-              >
-                {item} ◉
-              </div>
-            ))}
+          {items.map((item, index) => (
+  <div
+    className="wheel-item"
+    key={index}
+    style={{ "--item-nb": index }}
+    onClick={() => selectItem(index)}
+  >
+    {getDisplayText(item)} ◉
+  </div>
+))}
           </motion.div>
         </motion.div>
       )}

@@ -1,21 +1,19 @@
-"use client";
-
-import React from "react";
+import React, { forwardRef } from "react";
 import Link from "next/link"; // Assuming you're using Next.js for navigation
 import { Ranchers } from "@next/font/google";
 
 // Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
-
-const Footer = () => {
+// Forward ref for Footer component
+const Footer = forwardRef((props, ref) => {
   return (
-    <div className="footer py-12 text-white">
+    <div ref={ref} className="footer py-12 text-white">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-8 space-y-8 md:space-y-0">
         
         {/* Newsletter Signup */}
         <div className="newsletter text-center md:text-left flex-1">
-          <h2 className="text-2xl font-bold mb-2 ${ranchers.className} tracking-wide">NEWSLETTER SIGN-UP</h2>
+          <h2 className={`text-2xl font-bold mb-2 ${ranchers.className} tracking-wider`}>NEWSLETTER SIGN-UP</h2>
           <p className="mb-4">By subscribing to our mailing list you will always be updated with the latest news from us.</p>
           <form className="flex flex-col md:flex-row items-center">
             <input
@@ -38,7 +36,7 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div className="contact-info text-center md:text-left flex-1">
-          <h2 className="text-2xl font-bold mb-2">CONTACT INFO</h2>
+          <h2 className={`text-2xl font-bold mb-2 ${ranchers.className} tracking-wider`}>CONTACT INFO</h2>
           <p>Faculty of Technology & Engineering<br />
             The Maharaja Sayajirao University of Baroda,<br />
             Kalabhavan, Vadodara, Gujarat 390001.
@@ -49,61 +47,59 @@ const Footer = () => {
           </p>
           {/* Web Team Button */}
           <Link href="/webteam">
-            <button className="bg-transperent-500 text-white mt-4 p-2 rounded-md hover:bg-blue-400">Web Team</button>
+            <button className="bg-transparent text-white mt-4 p-2 rounded-md hover:bg-blue-400">Web Team</button>
           </Link>
         </div>
       </div>
 
       {/* Social Media Links */}
-     {/* Social Media Links */}
-<div className="social-media flex justify-center mt-8 space-x-6 text-2xl">
-  {/* Instagram */}
-  <a
-    href="https://instagram.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Instagram"
-    className="hover:text-pink-500"
-  >
-    <i className="fab fa-instagram"></i>
-  </a>
+      <div className="social-media flex justify-center mt-8 space-x-6 text-2xl">
+        {/* Instagram */}
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+          className="hover:text-pink-500"
+        >
+          <i className="fab fa-instagram"></i>
+        </a>
 
-  {/* Facebook */}
-  <a
-    href="https://facebook.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Facebook"
-    className="hover:text-blue-500"
-  >
-    <i className="fab fa-facebook"></i>
-  </a>
+        {/* Facebook */}
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook"
+          className="hover:text-blue-500"
+        >
+          <i className="fab fa-facebook"></i>
+        </a>
 
-  {/* YouTube */}
-  <a
-    href="https://youtube.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="YouTube"
-    className="hover:text-red-500"
-  >
-    <i className="fab fa-youtube"></i>
-  </a>
+        {/* YouTube */}
+        <a
+          href="https://youtube.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="YouTube"
+          className="hover:text-red-500"
+        >
+          <i className="fab fa-youtube"></i>
+        </a>
 
-  {/* LinkedIn */}
-  <a
-    href="https://linkedin.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="LinkedIn"
-    className="hover:text-blue-700"
-  >
-    <i className="fab fa-linkedin"></i>
-  </a>
-</div>
-
+        {/* LinkedIn */}
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          className="hover:text-blue-700"
+        >
+          <i className="fab fa-linkedin"></i>
+        </a>
+      </div>
     </div>
   );
-};
+});
 
 export default Footer;

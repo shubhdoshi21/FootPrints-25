@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Ranchers } from "@next/font/google";
+import Link from 'next/link';
 
 // Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
@@ -93,14 +94,23 @@ const Navbar = ({ refs }) => {
       Sponsors
     </button>
   </li>
-  <li>
-    <button
-      onClick={() => handleScroll(refs.footerRef)}
-      className="hover:text-gray-400 transition-colors duration-300"
-    >
-      Contact Us
-    </button>
-  </li>
+  
+<li>
+  <button
+    onClick={() => handleScroll(refs.footerRef)}
+    className="hover:text-gray-400 transition-colors duration-300"
+  >
+    Contact Us
+  </button>
+</li>
+<li>
+  <Link
+    href="/webteam"
+    className="hover:text-gray-400 transition-colors duration-300"
+  >
+    Web Team
+  </Link>
+</li>
 </ul>
 
     </nav>
