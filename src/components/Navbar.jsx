@@ -44,7 +44,7 @@ const Navbar = ({ refs }) => {
       <ul
   className={`${
     isMenuOpen ? "flex" : "hidden"
-  } flex-col items-start absolute top-full left-0 w-full bg-gray-900 md:flex md:flex-row md:relative md:w-auto md:bg-transparent gap-4 sm:gap-6 md:gap-8 text-[20px] tracking-wider font-semibold ${ranchers.className}`}
+  } flex-col items-start absolute top-full left-0 w-full bg-red-900 md:flex md:flex-row md:relative md:w-auto md:bg-transparent gap-4 sm:gap-6 md:gap-8 text-[20px] tracking-wider font-semibold ${ranchers.className}`}
 >
   <li>
     <button

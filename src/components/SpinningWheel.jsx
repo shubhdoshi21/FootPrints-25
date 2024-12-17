@@ -28,40 +28,42 @@ const SpinningWheel = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  // const selectItem = (index) => {
-  //   setSelectedItem(index);
-  //   // Set carousel data based on the selected item
-  //   setCarouselData(getCarouselDataForItem(items[index]));
-  //   if (items[index] === 25) {
-  //     // If 25 is selected, hide the wheel and show the GIF
-  //     setWheelVisible(false);
-  //     setCarouselData([]);
-  //     setShowCarousel(false);
-  //     setShowGif(true);
-  //   } else {
-  //     setTimeout(() => {
-  //       setShowCarousel(true);
-  //     }, 4000);
-  //   }
-  // };
   const selectItem = (index) => {
     setSelectedItem(index);
-    const spinDuration = 4000; // Set spin duration (in milliseconds)
-  
-    // If 25 is selected, hide the wheel and show the GIF after the spin
+    // Set carousel data based on the selected item
+    setCarouselData(getCarouselDataForItem(items[index]));
     if (items[index] === 25) {
-      setTimeout(() => {
-        setWheelVisible(false);
-        setShowGif(true);
-      }, spinDuration); // Wait for the spin to complete
+      // If 25 is selected, hide the wheel and show the GIF
+      setWheelVisible(false);
+      setCarouselData([]);
+      setShowCarousel(false);
+      setShowGif(true);
     } else {
-      // For other items, show the carousel after the spin
       setTimeout(() => {
-        setCarouselData(getCarouselDataForItem(items[index]));
         setShowCarousel(true);
-      }, spinDuration); // Wait for the spin to complete
+      }, 4000);
     }
   };
+  // const selectItem = (index) => {
+  //   setSelectedItem(index);
+  //   const spinDuration = 4000; // Set spin duration (in milliseconds)
+  
+  //   // If 25 is selected, hide the wheel and show the GIF after the spin
+  //   if (items[index] === 25) {
+  //     setTimeout(() => {
+  //       setWheelVisible(false);
+  //       setShowGif(true);
+  //     }, spinDuration); // Wait for the spin to complete
+  //   } else {
+  //     // For other items, show the carousel after the spin
+  //     setTimeout(() => {
+  //       setCarouselData(getCarouselDataForItem(items[index]));
+  //       setShowCarousel(true);
+  //     }, spinDuration); // Wait for the spin to complete
+  //   }
+  // };
+
+  
 
   const getCarouselDataForItem = (item) => {
     // Map of items to their respective sets of images
@@ -233,56 +235,56 @@ const SpinningWheel = () => {
     </AnimatePresence>
   
     <div>
-      <AnimatePresence>
-        {showCarousel && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.5 }}
-            className="carousel-container"
-          >
-            <Slider {...settings}>
-              {carouselData.map((imagePath, index) => (
-                <div key={index} className="carousel-item">
-                  <motion.img
-                    src={imagePath}
-                    alt={`Image ${index + 1}`}
-                    style={{
-                      width: "100%",
-                      height: "200px",
-                      objectFit: "cover",
-                    }}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{
-                      opacity:
-                        isMobile && index === currentSlide
-                          ? 1
-                          : isMobile
-                          ? 0.7
-                          : index === (currentSlide + 1) % carouselData.length
-                          ? 1
-                          : 0.7,
-                      scale:
-                        isMobile && index === currentSlide
-                          ? 1
-                          : isMobile
-                          ? 0.8
-                          : index === (currentSlide + 1) % carouselData.length
-                          ? 1
-                          : 0.8,
-                    }}
-                    transition={{ duration: 0.5 }}
-                  />
-                </div>
-              ))}
-            </Slider>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  
-    <AnimatePresence>
+  <AnimatePresence>
+    {showCarousel && !showGif && (
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.5 }}
+        className="carousel-container"
+      >
+        <Slider {...settings}>
+          {carouselData.map((imagePath, index) => (
+            <div key={index} className="carousel-item">
+              <motion.img
+                src={imagePath}
+                alt={`Image ${index + 1}`}
+                style={{
+                  width: "100%",
+                  height: "200px",
+                  objectFit: "cover",
+                }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{
+                  opacity:
+                    isMobile && index === currentSlide
+                      ? 1
+                      : isMobile
+                      ? 0.7
+                      : index === (currentSlide + 1) % carouselData.length
+                      ? 1
+                      : 0.7,
+                  scale:
+                    isMobile && index === currentSlide
+                      ? 1
+                      : isMobile
+                      ? 0.8
+                      : index === (currentSlide + 1) % carouselData.length
+                      ? 1
+                      : 0.8,
+                }}
+                transition={{ duration: 0.5 }}
+              />
+            </div>
+          ))}
+        </Slider>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
+<AnimatePresence>
       {showGif && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -301,9 +303,13 @@ const SpinningWheel = () => {
             }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
           />
+          
         </motion.div>
       )}
     </AnimatePresence>
+
+  
+    
   </div>
   
   );
