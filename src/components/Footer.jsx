@@ -28,7 +28,7 @@ const Footer = forwardRef((props, ref) => {
         {/* University Logo */}
         <div className="logo flex-1 flex justify-center md:justify-center">
           <img
-            src="/images/msu(white)logo.png" // Placeholder for university logo
+            src="/images/MSUlogowhite.png" // Placeholder for university logo
             alt="University Logo"
             className="h-24 transition-transform transform hover:scale-110"
           />
