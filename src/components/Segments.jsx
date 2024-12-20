@@ -84,10 +84,15 @@ const Segments = () => {
             }}
           >
             <div className="flex justify-center mb-4">
-              <img
+              {/* <img
                 src={segment.logo}
                 alt={`${segment.title} logo`}
                 className="w-24 h-24 sm:w-28 sm:h-28" // Adjusted for smaller screens
+              /> */}
+              <img
+              src={segment.logo}
+              alt={`${segment.title} logo`}
+              className="w-24 h-24 sm:w-28 sm:h-28 transition-transform duration-300 ease-out hover:scale-90"
               />
             </div>
             <h3 className="text-lg sm:text-xl font-semibold mb-2 text-center">{segment.title}</h3>

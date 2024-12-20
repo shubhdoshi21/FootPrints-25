@@ -230,12 +230,17 @@ const SpinningWheel = () => {
         "/images/X4/X4(3).jpg"
       ],
       15: [
-        "/images/X5/X5(1).jpg"
+        "/images/X5/X5(1).jpg",
+        "/images/X4/X4(3).jpg",
+        "/images/X3/X3(7).jpg",
+        "/images/X4/X4(3).jpg"
       ],
       16: [
         "/images/X6/X6(1).jpg",
         "/images/X6/X6(2).jpg",
-        "/images/X6/X6(3).jpg"
+        "/images/X3/X3(7).jpg",
+        "/images/X6/X6(3).jpg",
+        "/images/X7/X7(2).jpg"
       ],
       17: [
         "/images/X7/X7(1).jpg",
@@ -243,7 +248,7 @@ const SpinningWheel = () => {
         "/images/X7/X7(3).jpg",
         "/images/X7/X7(4).jpg",
         "/images/X7/X7(5).jpg",
-        "/images/X7/X7(6).jpg",
+        // "/images/X7/X7(6).jpg",
         "/images/X7/X7(7).jpg",
         "/images/X7/X7(8).jpg",
         "/images/X7/X7(9).jpg",
@@ -297,11 +302,12 @@ const SpinningWheel = () => {
       22: [
         "/images/22/image1.jpg",
         "/images/22/image2.jpg",
-        "/images/22/image3.jpg",
-        "/images/22/image4.jpg",
-        "/images/22/image5.jpg",
         "/images/22/image6.jpg",
-        "/images/22/image7.jpg",
+        
+        "/images/22/image5.jpg",
+        
+        
+        
       ],
       23: [
         "/images/23/23(1).jpg",

@@ -56,7 +56,7 @@ const Footer = forwardRef((props, ref) => {
       <div className="social-media flex justify-center mt-8 space-x-6 text-2xl">
         {/* Instagram */}
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/footprints.msu?igsh=d3RrcGtlb2FvczFk"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -67,7 +67,7 @@ const Footer = forwardRef((props, ref) => {
 
         {/* Facebook */}
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/msufp"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
@@ -78,7 +78,7 @@ const Footer = forwardRef((props, ref) => {
 
         {/* YouTube */}
         <a
-          href="https://youtube.com"
+          href="https://youtube.com/@footprintsmsu?si=gKrsuL31CHE8OLxi"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="YouTube"
@@ -89,7 +89,7 @@ const Footer = forwardRef((props, ref) => {
 
         {/* LinkedIn */}
         <a
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/company/msufp/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
