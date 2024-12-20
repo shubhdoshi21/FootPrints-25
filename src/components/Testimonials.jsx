@@ -57,7 +57,7 @@ const testimonialsData = [
       'https://static.toiimg.com/thumb/msid-55231152,width-400,resizemode-4/55231152.jpg',
   },
   {
-    name: 'ABHI N NIYU',
+    name: 'ABHI & NIYU',
     title: 'Youtubers/Content Creators Youth',
     quote:
       'It was remarkably delightful to be in the auditorium and having a chance to interact with so many people. Our panel was very well moderated by Ajay sir and was a very enjoyable experience. We have one message for all that because of your support, HUME FARAK PADTA HAI!',
@@ -150,12 +150,12 @@ const Testimonials = () => {
               }}
             >
               <div className="flex-grow overflow-scroll hide-scrollbar">
-                <p
-                  className="italic text-sm sm:text-base lg:text-lg mb-4 text-center line-clamp-4 overflow-scroll hide-scrollbar"
-                  style={{ maxHeight: '6em', overflow: 'scroll' }}
-                >
-                  {`"${testimonial.quote}"`}
-                </p>
+              <p
+              className="italic text-sm sm:text-base lg:text-lg mb-4 text-center"
+              style={{ maxHeight: 'none', overflow: 'visible' }}
+              >
+              {`"${testimonial.quote}"`}
+              </p>
               </div>
               <div className="flex items-center justify-center mb-4">
                 <img
