@@ -21,7 +21,7 @@ const flashbackVideos = [
     url: "https://www.instagram.com/reel/C8v-l-btSm1/?igsh=dXFqbGk4MDFteXpo",
   },
   {
-    imageSrc: "/path/to/image3.jpg", // Replace with the actual path to the image or thumbnail
+    imageSrc: "/images/fsr11.jpg", // Replace with the actual path to the image or thumbnail
     title: "Charity Event",
     url: "https://www.instagram.com/reel/DBwGQACteqF/?igsh=MThpdW5za3NreXQ0Zg==",
   },
