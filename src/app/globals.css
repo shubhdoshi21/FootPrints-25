@@ -454,7 +454,8 @@ a:hover {
 @media (max-width: 768px) {
   :root {
     --wheel-size: 250px; 
-    --wheel-border-size: 2px;
+    --wheel-border-size: 2px; 
+    --wheel-slice-spacing: 32px; 
   }
 
   .wheel-container {
@@ -475,6 +476,49 @@ a:hover {
   .wheel-item {
     padding: 0 5px 0 20px; 
     font-size: 0.8rem; 
+  }
+
+  .wheel-container::before,
+  .wheel-container::after {
+    border: solid transparent 15px; 
+  }
+
+  .wheel-container::before {
+    border-right-color: var(--wheel-color);
+  }
+
+  .wheel-container::after {
+    border-right-color: var(--neutral-color);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --wheel-size: 200px;
+    --wheel-slice-spacing: 32px;
+  }
+
+  .wheel-item {
+    padding: 0 3px 0 15px; 
+    font-size: 0.7rem; 
+  }
+
+  .wheel-container::before,
+  .wheel-container::after {
+    border: solid transparent 12px;
+  }
+
+  .wheel-container::before {
+    border-right-color: var(--wheel-color);
+  }
+
+  .wheel-container::after {
+    border-right-color: var(--neutral-color);
+  }
+
+  .wheel::after {
+    width: 15px;
+    height: 15px;
   }
 }
 
