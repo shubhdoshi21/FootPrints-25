@@ -43,7 +43,7 @@ const Footer = forwardRef((props, ref) => {
           </p>
           <p className="mt-4">
             <strong>Email:</strong> info@msufp.in | contact@msufp.in<br />
-            <strong>Phone:</strong> +91-9265574891 | +91-7874287905
+            <strong>Phone:</strong> +91-93132 37813 | +91-94283 16967
           </p>
           {/* Web Team Button */}
           <Link href="/webteam">
