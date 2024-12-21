@@ -303,11 +303,12 @@ const SpinningWheel = () => {
         "/images/22/image1.jpg",
         "/images/22/image2.jpg",
         "/images/22/image6.jpg",
-        
-        "/images/22/image5.jpg",
-        
-        
-        
+        "/images/22/image7.jpg",
+        "/images/22/image8.jpg",
+        "/images/22/image9.jpg",
+        "/images/22/image10.jpg",
+        "/images/22/image11.jpg",
+        "/images/22/image19.jpg",
       ],
       23: [
         "/images/23/23(1).jpg",
@@ -316,6 +317,13 @@ const SpinningWheel = () => {
         "/images/23/23(4).jpg",
         "/images/23/23(5).jpg",
         "/images/23/23(6).jpg",
+        "/images/23/image14.jpg",
+        "/images/23/image15.jpg",
+        "/images/23/image16.jpg",
+        "/images/23/image17.jpg",
+        "/images/23/image18.jpg",
+        "/images/23/image20.jpg",
+
     
     ],
 
