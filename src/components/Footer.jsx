@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import Link from "next/link"; // Assuming you're using Next.js for navigation
 import { Ranchers } from "@next/font/google";
+import "@fortawesome/fontawesome-free/css/all.min.css"; // Importing Font Awesome styles
 
 // Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
@@ -8,20 +9,26 @@ const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 // Forward ref for Footer component
 const Footer = forwardRef((props, ref) => {
   return (
-    <div ref={ref} className="footer py-12 text-white">
+    <div ref={ref} className="footer py-12 text-white bg-gray-800">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-8 space-y-8 md:space-y-0">
         
         {/* Newsletter Signup */}
         <div className="newsletter text-center md:text-left flex-1">
-          <h2 className={`text-2xl font-bold mb-2 ${ranchers.className} tracking-wider`}>NEWSLETTER SIGN-UP</h2>
-          <p className="mb-4">By subscribing to our mailing list you will always be updated with the latest news from us.</p>
+          <h2 className={`text-2xl font-bold mb-2 ${ranchers.className} tracking-wider`}>
+            NEWSLETTER SIGN-UP
+          </h2>
+          <p className="mb-4">
+            By subscribing to our mailing list you will always be updated with the latest news from us.
+          </p>
           <form className="flex flex-col md:flex-row items-center">
             <input
               type="email"
               placeholder="Enter Email Address"
               className="bg-gray-700 text-white p-2 rounded-l-md w-full md:w-auto"
             />
-            <button className="bg-blue-500 text-white p-2 rounded-r-md mt-2 md:mt-0 md:ml-2 hover:bg-blue-400">Subscribe</button>
+            <button className="bg-blue-500 text-white p-2 rounded-r-md mt-2 md:mt-0 md:ml-2 hover:bg-blue-400">
+              Subscribe
+            </button>
           </form>
         </div>
 
@@ -36,8 +43,11 @@ const Footer = forwardRef((props, ref) => {
 
         {/* Contact Info */}
         <div className="contact-info text-center md:text-left flex-1">
-          <h2 className={`text-2xl font-bold mb-2 ${ranchers.className} tracking-wider`}>CONTACT INFO</h2>
-          <p>Faculty of Technology & Engineering<br />
+          <h2 className={`text-2xl font-bold mb-2 ${ranchers.className} tracking-wider`}>
+            CONTACT INFO
+          </h2>
+          <p>
+            Faculty of Technology & Engineering<br />
             The Maharaja Sayajirao University of Baroda,<br />
             Kalabhavan, Vadodara, Gujarat 390001.
           </p>
@@ -47,7 +57,9 @@ const Footer = forwardRef((props, ref) => {
           </p>
           {/* Web Team Button */}
           <Link href="/webteam">
-            <button className="bg-transparent text-white mt-4 p-2 rounded-md hover:bg-blue-400">Web Team</button>
+            <button className="bg-transparent border border-blue-500 text-white mt-4 p-2 rounded-md hover:bg-blue-400">
+              Web Team
+            </button>
           </Link>
         </div>
       </div>
@@ -102,4 +114,6 @@ const Footer = forwardRef((props, ref) => {
   );
 });
 
+// Export Footer
+Footer.displayName = "Footer";
 export default Footer;
