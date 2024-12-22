@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
+
 import { Ranchers } from "@next/font/google";
 import { motion } from "framer-motion";
 
@@ -80,7 +80,7 @@ const Achievements = () => {
             }}
           >
             <div className="relative w-full h-40 mb-4">
-              <Image
+              <img
                 src={achievement.logo}
                 alt={`${achievement.title} logo`}
                 fill

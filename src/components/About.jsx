@@ -26,7 +26,7 @@ const About = () => {
           FootPrints is a National Level Technical Fiesta, which was incepted
           in 2001 by Sir C N Murthy. It has been rising in colossal
           proportions from a mere paper presentation comprising of 30
-          participants in FootPrints'01 to FootPrints'23 that comprised of
+          participants in FootPrints&apos;01 to FootPrints&apos;24 that comprised of
           myriad competitions, workshops, and seminars from the most incurred
           celebrities. FootPrints has strived to nurture and enlighten the
           engineering minds of the country and have thereby earned the
