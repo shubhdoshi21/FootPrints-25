@@ -109,9 +109,12 @@ const WebTeam = () => {
                 overflowX: "hidden",
             }}
         >
-            <div className="container mx-auto px-6 py-5 max-w-[70%] my-1">
+            <div className="container mx-auto  py-5 max-w-[70%] my-1">
                 <div className="text-center mb-10">
-                    <h2 className="text-4xl font-extrabold text-white">Meet the Website Team</h2>
+                <h2 className="text-xl sm:text-sm md:text-4xl lg:text-5xl font-extrabold text-white">
+  Meet the Website Team
+</h2>
+
                    
                 </div>
 

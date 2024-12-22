@@ -12,6 +12,11 @@ html, body {
   -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
 }
+/* Smooth scroll for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* Hide default scrollbars */
 .hide-scrollbar {

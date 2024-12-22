@@ -73,46 +73,51 @@ const SponsorsSection = () => {
 
   return (
     <div className="sponsors-section py-8 text-center">
-      <h2 className="text-3xl font-bold mb-4" style={{ color: "white" }}>SPONSORS</h2>
-      <div
-        className="sponsor-marquee overflow-hidden whitespace-nowrap max-w-5xl mx-auto"
-        ref={scrollRef}
-      >
-        <div className="flex items-center gap-8">
-          {sponsors.concat(sponsors).map((sponsor, index) => (
-            <div key={index} className="flex flex-col items-center min-w-[200px] max-w-[200px]">
-              <div
-                style={{
-                  backgroundColor: "#ffffff", // Adjust this color as needed
-                  borderRadius: "8px",
-                  padding: "10px",
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0)",
-                  display: "flex", 
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: "190px", // Ensure uniform width
-                  height: "190px", // Reduced height
-                }}
-              >
-                <img
-                  src={sponsor.imageSrc}
-                  alt={sponsor.name}
-                  className="w-32 h-32 object-contain rounded shadow-md"
-                  style={{
-                    maxWidth: "70%",  // Keep the image within the box size
-                    maxHeight: "70%", // Keep the image within the box size
-                  }}
-                />
-              <span className="text-sm mt-2 text-black">{sponsor.name}</span>
-
-
-              </div>
-            </div>
-          ))}
+  <h2 className="text-3xl font-bold mb-4" style={{ color: "white" }}>
+    SPONSORS
+  </h2>
+  <div
+    className="sponsor-marquee overflow-hidden whitespace-nowrap max-w-5xl mx-auto"
+    ref={scrollRef}
+  >
+    <div className="flex items-center gap-8">
+      {sponsors.concat(sponsors).map((sponsor, index) => (
+        <div
+          key={index}
+          className="flex flex-col items-center min-w-[150px] md:min-w-[200px] max-w-[150px] md:max-w-[200px]"
+        >
+          <div
+            style={{
+              backgroundColor: "#ffffff",
+              borderRadius: "8px",
+              padding: "10px",
+              boxShadow: "0 4px 8px rgba(0, 0, 0, 0)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+            className="w-[130px] h-[130px] md:w-[190px] md:h-[190px]" // Adjust sizes for mobile
+          >
+            <img
+              src={sponsor.imageSrc}
+              alt={sponsor.name}
+              className="w-20 h-20 md:w-32 md:h-32 object-contain rounded shadow-md"
+              style={{
+                maxWidth: "70%", // Keep the image within the box size
+                maxHeight: "70%", // Keep the image within the box size
+              }}
+            />
+            <span className="text-xs md:text-sm mt-2 text-black">
+              {sponsor.name}
+            </span>
+          </div>
         </div>
-      </div>
+      ))}
     </div>
+  </div>
+</div>
+
   );
 };
 
