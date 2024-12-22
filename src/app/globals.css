@@ -661,34 +661,32 @@ a:hover {
   }
 }
 /* Apply styles to all scrollbars */
+/* First, reset the HTML and body overflow */
+html, body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Keep your existing scrollbar styling */
 ::-webkit-scrollbar {
-  width: 12px; /* Set scrollbar width */
-  height: 12px; /* Set scrollbar height for horizontal scrollbars */
+  width: 12px;
+  height: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #a72a2a, #330000); /* Gradient color */
-  border-radius: 20px; /* Makes the scrollbar rounded */
-  border: 3px solid #fff; /* Adds space and contrast */
+  background: linear-gradient(to bottom, #a72a2a, #330000);
+  border-radius: 20px;
+  border: 3px solid #fff;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f0f0f0; /* Track background color */
+  background: #f0f0f0;
   border-radius: 20px;
 }
 
-/* Scrollbar fix */
-@media (max-width: 768px) {
-  ::-webkit-scrollbar {
-    display: none !important; /* Force hide scrollbars on mobile */
-  }
-  
-  * {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-  }
-  
-  body {
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  }
+/* Make sure content doesn't cause extra scroll */
+.content {
+  width: 100%;
+  box-sizing: border-box;
 }
