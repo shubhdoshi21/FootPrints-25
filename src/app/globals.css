@@ -665,10 +665,21 @@ a:hover {
 html, body {
   margin: 0;
   width: 100%;
-  overflow-x: hidden;
+  height: 100%;
+  overflow: hidden; /* Prevent extra scrolling */
 }
 
-/* Keep your existing scrollbar styling */
+body {
+  overflow-y: auto; /* Enable vertical scrolling only for the main content */
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent internal scrolls */
+}
+
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
@@ -683,10 +694,4 @@ html, body {
 ::-webkit-scrollbar-track {
   background: #f0f0f0;
   border-radius: 20px;
-}
-
-/* Make sure content doesn't cause extra scroll */
-.content {
-  width: 100%;
-  box-sizing: border-box;
 }
