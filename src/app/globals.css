@@ -47,7 +47,7 @@ html, body {
   }
 }
 
-/* Wheel Variables */
+
 :root {
   --wheel-font: "Lato", "Quicksand", sans-serif;
   --wheel-size: 500px;
@@ -64,7 +64,8 @@ html, body {
   --reset-duration: 1s;
 }
 
-/* Wheel Styles */
+
+
 .wheel-container {
   display: block;
   position: relative;
@@ -73,6 +74,7 @@ html, body {
   height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
   padding: 3px;
   margin: auto;
+
   background-color: var(--neutral-color);
   border: solid var(--wheel-color) 3px;
   border-radius: 50%;
@@ -183,7 +185,6 @@ html, body {
   border-right: solid var(--neutral-color) calc(var(--wheel-size) / 2);
 }
 
-/* Carousel Styles */
 .carousel-container {
   display: block;
   width: 70%;
@@ -201,7 +202,7 @@ html, body {
   align-items: center;
 }
 
-/* Slick Carousel Custom Styles */
+/* Custom styles for react-slick */
 .slick-prev,
 .slick-next {
   font-size: 0;
@@ -219,6 +220,17 @@ html, body {
   outline: none;
   background: transparent;
 }
+
+/* Global or in your component's styles */
+.hide-scrollbar {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+
 
 .slick-prev:before,
 .slick-next:before {
@@ -247,29 +259,35 @@ html, body {
   color: var(--wheel-color);
 }
 
-/* Footer Styles */
+@layer utilities {
+  .hover\:border-glow:hover {
+    box-shadow: 0 0 15px rgba(255, 99, 71, 0.7), 0 0 30px rgba(255, 99, 71, 0.5);
+    border-color: rgba(255, 99, 71, 0.9);
+  }
+}
+
+/* Footer Background */
 .footer {
-  background-color: rgba(0, 0, 0, 0.2);
-  color: #fff;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text for contrast */
   padding: 50px 0;
   transition: background-color 0.3s ease-in-out;
 }
 
+/* Newsletter Signup Styling */
 .newsletter input,
-.contact-info button,
 .newsletter button {
-  background-color: transparent;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease;
-  border: 2px solid rgba(113, 8, 8, 0.7);
 }
 
+/* Button Hover Effects */
 .newsletter button:hover,
-.contact-info button:hover,
 .footer button:hover {
-  background-color: rgb(176, 10, 10);
+  background-color: #1e90ff; /* Blue shade on hover */
   transform: translateY(-5px);
 }
 
+/* Social Media Links */
 .social-media a {
   color: #fff;
   font-size: 2rem;
@@ -277,21 +295,51 @@ html, body {
 }
 
 .social-media a:hover {
-  color: #b00a0a;
+  color: #f2f8fd; /* Blue color on hover */
   transform: translateY(-5px);
 }
 
+/* Footer Logo */
 .logo img {
   transition: transform 0.3s ease-in-out;
-  width: 150%;
-  height: auto;
 }
 
 .logo img:hover {
   transform: scale(1.1);
 }
 
-/* Animation Keyframes */
+/* Contact Info Hover */
+.contact-info button:hover {
+  background-color: #ffffff;
+  transform: translateY(-5px);
+}
+
+/* Smooth Scroll for Footer Links */
+a {
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #1e90ff; /* Blue on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+  }
+
+  .newsletter,
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-media {
+    flex-direction: column;
+  }
+}
+
+
 @keyframes fade-up {
   from {
     opacity: 0;
@@ -301,6 +349,18 @@ html, body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.animate-fade-up {
+  animation: fade-up 1s ease-in-out forwards;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.translate-y-4 {
+  transform: translateY(20px);
 }
 
 @keyframes fade-left {
@@ -336,11 +396,7 @@ html, body {
   }
 }
 
-/* Animation Classes */
-.animate-fade-up {
-  animation: fade-up 1s ease-in-out forwards;
-}
-
+/* Apply animations */
 .animate-fade-left {
   animation: fade-left 1s ease-out;
 }
@@ -351,23 +407,92 @@ html, body {
 
 .animate-fade-down {
   animation: fade-down 1s ease-out;
+};
+
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.2); /* Black background */
+  color: #fff; /* White text for contrast */
+  padding: 50px 0;
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Utility Classes */
-.opacity-0 {
-  opacity: 0;
+/* Newsletter Signup Styling */
+.newsletter input,
+.contact-info button,
+.newsletter button {
+  background-color: transparent;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  border: 2px solid rgba(113, 8, 8, 0.7);
+  
 }
 
-.translate-y-4 {
-  transform: translateY(20px);
+/* Button Hover Effects */
+.newsletter button:hover,
+.contact-info button:hover,
+.footer button:hover {
+  background-color: rgb(176, 10, 10); /* Blue shade on hover */
+  transform: translateY(-5px);
+}
+* Social Media Links */
+.social-media a {
+  color: #fff;
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Responsive Styles */
+.social-media a:hover {
+  color: #b00a0a; /* Blue color on hover */
+  transform: translateY(-5px);
+}
+
+/* Footer Logo */
+.logo img {
+  transition: transform 0.3s ease-in-out;
+  width: 150%; /* Adjust the percentage as needed */
+  height: auto;
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Contact Info Hover */
+.contact-info button:hover {
+  background-color: #b00a0a;
+  transform: translateY(-5px);
+}
+
+/* Smooth Scroll for Footer Links */
+a {
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #b00a0a; /* Blue on hover */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 30px 0;
+  }
+
+  .newsletter,
+  .contact-info {
+    text-align: center;
+  }
+
+  .social-media {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
-    --wheel-size: 250px;
-    --wheel-border-size: 2px;
-    --wheel-slice-spacing: 32px;
+    --wheel-size: 250px; 
+    --wheel-border-size: 2px; 
+    --wheel-slice-spacing: 32px; 
   }
 
   .wheel-container {
@@ -386,36 +511,21 @@ html, body {
   }
 
   .wheel-item {
-    padding: 0 5px 0 20px;
-    font-size: 0.8rem;
-  }
-
-  .carousel-container {
-    width: 80%;
-    margin-top: 10px;
-  }
-
-  .carousel-item {
-    padding: 15px;
-    font-size: 0.9rem;
-  }
-
-  .footer {
-    padding: 30px 0;
-  }
-
-  .newsletter,
-  .contact-info {
-    text-align: center;
-  }
-
-  .social-media {
-    flex-direction: column;
+    padding: 0 5px 0 20px; 
+    font-size: 0.8rem; 
   }
 
   .wheel-container::before,
   .wheel-container::after {
-    border: solid transparent 15px;
+    border: solid transparent 15px; 
+  }
+
+  .wheel-container::before {
+    border-right-color: var(--wheel-color);
+  }
+
+  .wheel-container::after {
+    border-right-color: var(--neutral-color);
   }
 }
 
@@ -426,17 +536,8 @@ html, body {
   }
 
   .wheel-item {
-    padding: 0 3px 0 15px;
-    font-size: 0.7rem;
-  }
-
-  .carousel-container {
-    margin-top: 5px;
-  }
-
-  .carousel-item {
-    padding: 10px;
-    font-size: 0.8rem;
+    padding: 0 3px 0 15px; 
+    font-size: 0.7rem; 
   }
 
   .wheel-container::before,
@@ -444,13 +545,63 @@ html, body {
     border: solid transparent 12px;
   }
 
+  .wheel-container::before {
+    border-right-color: var(--wheel-color);
+  }
+
+  .wheel-container::after {
+    border-right-color: var(--neutral-color);
+  }
+
   .wheel::after {
     width: 15px;
     height: 15px;
   }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 80%; 
+    margin-top: 10px;
+  }
+
+  .carousel-item {
+    padding: 15px; 
+    font-size: 0.9rem; 
+  }
+
+  .slick-prev,
+  .slick-next {
+    width: 16px;
+    height: 16px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 16px; 
+  }
+
+  .slick-prev {
+    left: -15px;
+  }
+
+  .slick-next {
+    right: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    margin-top: 5px;
+  }
+
+  .carousel-item {
+    padding: 10px; 
+    font-size: 0.8rem;
+  }
 
   .slick-dots li button:before {
-    font-size: 10px;
+    font-size: 10px; 
   }
 
   .slick-prev:before,
@@ -459,9 +610,90 @@ html, body {
   }
 }
 
-@layer utilities {
-  .hover\:border-glow:hover {
-    box-shadow: 0 0 15px rgba(255, 99, 71, 0.7), 0 0 30px rgba(255, 99, 71, 0.5);
-    border-color: rgba(255, 99, 71, 0.9);
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+  :root {
+    --wheel-size: 250px; 
+    --wheel-border-size: 2px;
+  }
+
+  .wheel-container {
+    width: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
+    height: calc(var(--wheel-size) + 2 * var(--wheel-border-size));
+  }
+
+  .wheel {
+    width: var(--wheel-size);
+    height: var(--wheel-size);
+  }
+
+  .wheel::after {
+    width: 20px;
+    height: 20px;
+  }
+
+  .wheel-item {
+    padding: 0 5px 0 20px; 
+    font-size: 0.8rem; 
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 80%; 
+    margin-top: 10px;
+  }
+
+  .carousel-item {
+    padding: 15px; 
+    font-size: 0.9rem; 
+  }
+
+  .slick-prev,
+  .slick-next {
+    width: 16px;
+    height: 16px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 16px; 
+  }
+
+  .slick-prev {
+    left: -15px;
+  }
+
+  .slick-next {
+    right: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-container {
+    margin-top: 5px;
+  }
+
+  .carousel-item {
+    padding: 10px; 
+    font-size: 0.8rem;
+  }
+
+  .slick-dots li button:before {
+    font-size: 10px; 
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 14px;
   }
 }
