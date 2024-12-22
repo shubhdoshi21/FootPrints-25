@@ -3,8 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
-    optimizeCss: false, // Disable CSS minification for debugging
+    optimizeCss: false, // Disables CSS minification for debugging
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
