@@ -1,43 +1,48 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { Ranchers } from "@next/font/google";
 
-// Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
 const videoLinks = [
   { id: "V5ROgRVso90?si=9vPShkQzlMgTkN9j", title: "Kaleidoscope Launch Video" },
-  // {
-  //   id: "-8waHD5yGQE?si=yPKlwCxl8uJbjaNM",
-  //   title: "Footprints'24 Official AfterMovie",
-  // },
   { id: "PS85aJvTNKM?si=8jgyTRJkf4RSTI8G", title: "Aditya Gadhvi" },
-  // { id: "4TER0lVOsNg?si=Wk9UIQ4GDxILW_Fw", title: "Footprints'24 Official Teaser" },
-  
   { id: "-8waHD5yGQE?si=yPKlwCxl8uJbjaNM", title: "Footprints'24 Official AfterMovie" },
-  {id : "nw49b7oyOqM?si=_bpyxYWcUJL4iiG" , title: "tunein tuesday"},
+  { id: "nw49b7oyOqM?si=_bpyxYWcUJL4iiG", title: "tunein tuesday" },
 ];
 
 const VideosSection = () => {
+  const [isMobile, setIsMobile] = useState(true); // Default to mobile to prevent flicker
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    // Check immediately
+    checkMobile();
+    
+    // Add resize listener
+    window.addEventListener('resize', checkMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <div className="videos-section py-8 sm:py-16 px-4 sm:px-8 text-white text-center">
-      <h2
-        className={`text-3xl sm:text-4xl font-bold mb-6 ${ranchers.className} tracking-wide`}
-      >
+      <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${ranchers.className} tracking-wide`}>
         VIDEOS
       </h2>
-      <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center items-center gap-4 sm:gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-6xl mx-auto">
         {videoLinks.map((video, index) => (
-          <VideoCard
-            key={index}
-            video={video}
-            index={index}
-            className={`
-              w-full sm:w-[calc(50%-1.5rem)]
-              ${index === 2 ? "sm:mx-auto" : ""}
-            `}
+          <VideoCard 
+            key={index} 
+            video={video} 
+            index={index} 
+            isMobile={isMobile}
           />
         ))}
       </div>
@@ -45,24 +50,21 @@ const VideosSection = () => {
   );
 };
 
-const VideoCard = ({ video, index, className = "" }) => {
+const VideoCard = ({ video, index, isMobile }) => {
   const { ref, inView } = useInView({
     threshold: 0.1,
-    triggerOnce: false,
+    triggerOnce: true,
   });
 
-  // Determine animation direction based on the index
-  const direction = index % 2 === 0 ? "-translate-x-full" : "translate-x-full";
+  // Skip animations on mobile
+  const animationClass = isMobile 
+    ? 'translate-x-0 opacity-100' 
+    : `${inView ? 'translate-x-0 opacity-100' : (index % 2 === 0 ? '-translate-x-full' : 'translate-x-full') + ' opacity-0'}`;
 
   return (
     <div
       ref={ref}
-      className={`
-        transition-all duration-700 transform p-2
-        ${inView ? "translate-x-0 opacity-100" : `${direction} opacity-0`}
-        ${className}
-        sm:translate-x-0  // Disable translate on small screens
-      `}
+      className={`transition-all duration-700 transform p-2 ${animationClass}`}
     >
       <div className="relative overflow-hidden rounded-lg shadow-lg">
         <iframe
@@ -70,6 +72,7 @@ const VideoCard = ({ video, index, className = "" }) => {
           title={video.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
+          loading="lazy"
           className="w-full aspect-video"
         ></iframe>
       </div>

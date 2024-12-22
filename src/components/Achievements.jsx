@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-
 import { Ranchers } from "@next/font/google";
 import { motion } from "framer-motion";
 
@@ -68,23 +67,18 @@ const Achievements = () => {
             key={index}
             ref={(el) => (achievementRefs.current[index] = el)}
             data-index={index}
-            className={`p-4 rounded-lg bg-opacity-85 cursor-pointer transition-all ease-out duration-1000 relative mx-auto ${
-              visibleIndices.includes(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
-            }`}
+            className={`p-4 rounded-lg bg-opacity-85 cursor-pointer transition-all ease-out duration-1000 relative mx-auto 
+              ${visibleIndices.includes(index) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"}`}
             style={{
-              width: "280px",
-              minHeight: "220px",
-              // borderColor: "#a84343",
-              // borderWidth: "2px",
-              // boxShadow: "0 0 5px 1px #a84343",
+              width: "100%", // Make sure it's responsive on smaller screens
+              maxWidth: "280px", // Set max width for larger screens
             }}
           >
             <div className="relative w-full h-40 mb-4">
               <img
                 src={achievement.logo}
                 alt={`${achievement.title} logo`}
-                fill
-                className="rounded-lg object-cover"
+                className="rounded-lg object-cover w-full h-full"
               />
             </div>
             <h3 className="text-lg sm:text-xl font-semibold mb-2 text-center">

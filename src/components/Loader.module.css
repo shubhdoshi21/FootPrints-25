@@ -49,6 +49,11 @@
 /* Responsive styling for small screens */
 @media (max-width: 600px) {
   .loading-text {
-    font-size: 25px; /* Reduce font size on smaller screens */
+    font-size: 20px;
+    padding-right: 10px;
+    padding-left: 10px; /* Reduce font size on smaller screens */
+  }
+  .loading-text-words{
+    padding :3px;
   }
 }

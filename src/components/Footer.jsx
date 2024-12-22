@@ -1,17 +1,14 @@
 import React, { forwardRef } from "react";
-import Link from "next/link"; // Assuming you're using Next.js for navigation
+import Link from "next/link";
 import { Ranchers } from "@next/font/google";
-import "@fortawesome/fontawesome-free/css/all.min.css"; // Importing Font Awesome styles
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
-// Load Ranchers font
 const ranchers = Ranchers({ subsets: ["latin"], weight: "400" });
 
-// Forward ref for Footer component
 const Footer = forwardRef((props, ref) => {
   return (
     <div ref={ref} className="footer py-12 text-white bg-gray-800">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-8 space-y-8 md:space-y-0">
-        
         {/* Newsletter Signup */}
         <div className="newsletter text-center md:text-left flex-1">
           <h2 className={`text-2xl font-bold mb-2 ${ranchers.className} tracking-wider`}>
@@ -35,7 +32,7 @@ const Footer = forwardRef((props, ref) => {
         {/* University Logo */}
         <div className="logo flex-1 flex justify-center md:justify-center">
           <img
-            src="/images/MSUlogowhite.png" // Placeholder for university logo
+            src="/images/MSUlogowhite.png"
             alt="University Logo"
             className="h-24 transition-transform transform hover:scale-110"
           />
@@ -55,7 +52,6 @@ const Footer = forwardRef((props, ref) => {
             <strong>Email:</strong> info@msufp.in | contact@msufp.in<br />
             <strong>Phone:</strong> +91-93132 37813 | +91-94283 16967
           </p>
-          {/* Web Team Button */}
           <Link href="/webteam">
             <button className="bg-transparent border border-blue-500 text-white mt-4 p-2 rounded-md hover:bg-blue-400">
               Web Team
@@ -64,56 +60,53 @@ const Footer = forwardRef((props, ref) => {
         </div>
       </div>
 
-      {/* Social Media Links */}
-      <div className="social-media flex justify-center mt-8 space-x-6 text-2xl">
-        {/* Instagram */}
-        <a
-          href="https://www.instagram.com/footprints.msu?igsh=d3RrcGtlb2FvczFk"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-          className="hover:text-pink-500"
-        >
-          <i className="fab fa-instagram"></i>
-        </a>
+      {/* Social Media Links - Fixed for mobile */}
+      <div className="flex flex-row justify-center mt-8 px-4">
+        <div className="flex space-x-6 text-2xl">
+          <a
+            href="https://www.instagram.com/footprints.msu?igsh=d3RrcGtlb2FvczFk"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="hover:text-pink-500"
+          >
+            <i className="fab fa-instagram"></i>
+          </a>
 
-        {/* Facebook */}
-        <a
-          href="https://www.facebook.com/msufp"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Facebook"
-          className="hover:text-blue-500"
-        >
-          <i className="fab fa-facebook"></i>
-        </a>
+          <a
+            href="https://www.facebook.com/msufp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="hover:text-blue-500"
+          >
+            <i className="fab fa-facebook"></i>
+          </a>
 
-        {/* YouTube */}
-        <a
-          href="https://youtube.com/@footprintsmsu?si=gKrsuL31CHE8OLxi"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="YouTube"
-          className="hover:text-red-500"
-        >
-          <i className="fab fa-youtube"></i>
-        </a>
+          <a
+            href="https://youtube.com/@footprintsmsu?si=gKrsuL31CHE8OLxi"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            className="hover:text-red-500"
+          >
+            <i className="fab fa-youtube"></i>
+          </a>
 
-        {/* LinkedIn */}
-        <a
-          href="https://www.linkedin.com/company/msufp/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          className="hover:text-blue-700"
-        >
-          <i className="fab fa-linkedin"></i>
-        </a>
+          <a
+            href="https://www.linkedin.com/company/msufp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="hover:text-blue-700"
+          >
+            <i className="fab fa-linkedin"></i>
+          </a>
+        </div>
       </div>
     </div>
   );
 });
 
-// Export Footer
 Footer.displayName = "Footer";
 export default Footer;

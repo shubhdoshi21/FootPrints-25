@@ -22,7 +22,9 @@ const About = () => {
         >
           About FootPrints
         </h2>
-        <p className="text-lg leading-relaxed text-gray-300">
+
+        {/* Full Content for Larger Screens */}
+        <p className="text-lg leading-relaxed text-gray-300 hidden sm:block">
           FootPrints is a National Level Technical Fiesta, which was incepted
           in 2001 by Sir C N Murthy. It has been rising in colossal
           proportions from a mere paper presentation comprising of 30
@@ -40,6 +42,15 @@ const About = () => {
           world records, FSR has all the benevolence. It has been a thrilling
           journey of Innovation and Experience which is something beyond
           imagination.
+        </p>
+
+        {/* Shortened Content for Mobile */}
+        <p className="text-base sm:text-lg leading-relaxed text-gray-300 sm:hidden">
+          FootPrints is a National Level Technical Fiesta, started in 2001.
+          It has grown from a small paper presentation to a huge event with
+          competitions, workshops, and seminars featuring renowned celebrities.
+          FootPrints nurtures engineering minds and aims to make a positive
+          impact through innovation and FootPrints Social Responsibility (FSR).
         </p>
       </div>
     </motion.div>
