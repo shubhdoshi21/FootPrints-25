@@ -2,20 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 /* ShaderBackground.css */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
-}
-
-/* Ensure no overflow issues with elements */
-* {
-  box-sizing: border-box;
-}
 
 :root {
   --wheel-font: "Lato", "Quicksand", sans-serif;
@@ -688,5 +674,20 @@ a:hover {
   .slick-prev:before,
   .slick-next:before {
     font-size: 14px;
+  }
+}
+/* Scrollbar fix */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none !important; /* Force hide scrollbars on mobile */
+  }
+  
+  * {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  body {
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
 }
