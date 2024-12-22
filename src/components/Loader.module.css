@@ -26,6 +26,8 @@
   font-family: 'Press Start 2P', monospace; /* Retro pixel-style font */
   font-size: 35px;
   color: #fff; /* White text for excellent contrast */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .loading-text-words {
@@ -41,5 +43,12 @@
   }
   40% {
     transform: scale(1.2);
+  }
+}
+
+/* Responsive styling for small screens */
+@media (max-width: 600px) {
+  .loading-text {
+    font-size: 25px; /* Reduce font size on smaller screens */
   }
 }
