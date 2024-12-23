@@ -49,8 +49,8 @@ const Footer = forwardRef((props, ref) => {
             Kalabhavan, Vadodara, Gujarat 390001.
           </p>
           <p className="mt-4">
-            <strong>Email:</strong> info@msufp.in | contact@msufp.in<br />
-            <strong>Phone:</strong> +91-93132 37813 | +91-94283 16967
+            <strong>Email:</strong> <a href="mailto:managmentfp25@gmail.com" className="no-underline">managmentfp25@gmail.com</a><br />
+            <strong>Phone:</strong> <a href="tel:9428316967">+91-94283 16967</a>
           </p>
           <Link href="/webteam">
             <button className="bg-transparent border border-blue-500 text-white mt-4 p-2 rounded-md hover:bg-blue-400">
